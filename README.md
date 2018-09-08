@@ -1,24 +1,3 @@
-# README
+# Que
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Que is a full-stack application, inspired by Quora, which allows users to ask and answer other user-generated questions. The technologies used for this application includes Rails as the framework (backend), React/Redux for the frontend and PostGresQL as the database. This project utilizes most (if not all) of our learnings as a student in App Academy.
