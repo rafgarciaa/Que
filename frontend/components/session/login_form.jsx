@@ -35,6 +35,7 @@ export default class LogInForm extends React.Component {
   }
 
   render() {
+    const demoUser = {email: 'demo_user@email.com', password: 'starwars'};
     return (
       <div className='login-form-box'>
         <form onSubmit={ this.handleSubmit }>
@@ -51,8 +52,13 @@ export default class LogInForm extends React.Component {
             value={this.state.password}
             onChange={this.update('password')}></input><br/>
 
-          <button className='login-button'>Login</button>
+          <button className='login-button'>Login</button><br/>
         </form>
+        <button
+          onClick={ () => this.props.processForm(demoUser) }
+          className='demo-user-button'>
+          Demo
+        </button>
         <div className='login-errors-list'>
           { this.renderErrors() }
         </div>

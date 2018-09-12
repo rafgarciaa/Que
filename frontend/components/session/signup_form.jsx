@@ -46,7 +46,7 @@ export default class SignUpForm extends React.Component {
                 value={this.state.first_name}
                 onChange={this.update('first_name')}/>
             </label><br/>
-            <label>LAST NAME<br/>
+          <label className='lname-wrapper'>LAST NAME<br/>
               <input
                 className='signup-input-box'
                 type='text'

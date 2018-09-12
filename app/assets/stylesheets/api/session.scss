@@ -52,7 +52,7 @@ html, body {
 
 .login-form-container {
   float: right;
-  padding: 50px 70px 50px 50px;
+  padding: 50px 5px 10px 15px;
 }
 
 .signup-form-box > form {
@@ -87,6 +87,7 @@ html, body {
   box-shadow: inset 0 1px 1px rgba(200,200,200,0.3);
   display: block;
   width: 92%;
+  box-sizing: border-box;
 }
 
 .signup-input-box {
@@ -109,7 +110,11 @@ html, body {
   justify-content: space-between;
 }
 
-.login-button, .signup-button {
+.lname-wrapper {
+  margin-left: 5px;
+}
+
+.login-button, .signup-button, .demo-user-button {
   float: right;
   font-size: 15px;
   line-height: 1.4;
@@ -121,12 +126,27 @@ html, body {
   box-shadow: 0 1px 1px 0 rgba(200,200,200,0.6);
 }
 
-.login-button:hover, .signup-button:hover {
+.login-button {
+  margin-right: 22px;
+}
+
+.demo-user-button {
+  display: block;
+  margin-top: 10px;
+  margin-right: 20px;
+  clear: both;
+}
+
+.login-button:hover, .signup-button:hover, .demo-user-button:hover {
   cursor: pointer;
 }
 
 .signup-errors-list, .login-errors-list {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.login-errors-list {
+  margin-top: 40px;
 }
 
 .signup-errors-list > ul, .login-errors-list > ul {
