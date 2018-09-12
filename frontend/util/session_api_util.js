@@ -21,7 +21,7 @@ export const logout = () => {
 export const signup = user => {
   return $.ajax({
     method: 'POST',
-    url: `api/session`,
+    url: `api/users`,
     data: {
       user: {
         first_name: user.first_name,

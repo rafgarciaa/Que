@@ -1,5 +1,4 @@
 9 / 11 / 2018 LOG #1:
-
 - npm init
 - npm install tools
 - add frontend folder & entry file
@@ -12,3 +11,8 @@
 - add api/users & api/sessions controller
 - add api/user show views
 - add frontend auth components
+
+
+9 / 12 / 2018 LOG #2:
+- bootstrap current user onto the window
+- protect frontend routes (login and signup forms)

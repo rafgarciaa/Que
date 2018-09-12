@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default class SessionSignupForm extends React.Component {
+export default class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -10,8 +10,7 @@ export default class SessionSignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(this.state);
   }
 
   update(field) {
@@ -26,12 +25,26 @@ export default class SessionSignupForm extends React.Component {
     if (this.props.formType === 'Sign Up') {
       return (
         <form onSubmit={ this.handleSubmit }>
+          <label>First Name:
+            <br/>
+            <input
+              type='text'
+              value={this.state.first_name}
+              onChange={this.update('first_name')}/>
+          </label><br/>
+          <label>Last Name:
+            <br/>
+            <input
+              type='text'
+              value={this.state.last_name}
+              onChange={this.update('last_name')}/>
+          </label><br/>
           <label>Email:
             <br/>
             <input
               type='text'
               value={this.state.username}
-              onChange={this.update('email')}></input>
+              onChange={this.update('email')}/>
           </label>
           <br/>
           <label>Password:
@@ -39,7 +52,7 @@ export default class SessionSignupForm extends React.Component {
             <input
               type='password'
               value={this.state.password}
-              onChange={this.update('password')}></input>
+              onChange={this.update('password')}/>
           </label>
 
           <button>{this.props.formType}</button>

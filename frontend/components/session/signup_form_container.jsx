@@ -1,4 +1,4 @@
-import SessionSignupForm from './session_form';
+import SessionForm from './session_form';
 import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
 
@@ -20,4 +20,4 @@ const mdp = dispatch => {
   };
 };
 
-export default connect(msp, mdp)(SessionSignupForm);
+export default connect(msp, mdp)(SessionForm);
