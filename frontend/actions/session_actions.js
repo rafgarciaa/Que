@@ -29,14 +29,8 @@ export const login = (user) => {
   return (dispatch) => {
     return SessionApiUtil.login(user).then( (userFromServer) => {
       return dispatch(receiveCurrentUser(userFromServer));
-    });
-  };
-};
-
-export const logout = () => {
-  return (dispatch) => {
-    return SessionApiUtil.logout().then( () => {
-      return dispatch(logoutCurrentUser());
+    }, errors => {
+      return dispatch(receiveErrors(errors.responseJSON));
     });
   };
 };
@@ -45,6 +39,16 @@ export const signup = (user) => {
   return (dispatch) => {
     return SessionApiUtil.signup(user).then( (userFromServer) => {
       return dispatch(receiveCurrentUser(userFromServer));
+    }, errors => {
+      return dispatch(receiveErrors(errors.responseJSON));
+    });
+  };
+};
+
+export const logout = () => {
+  return (dispatch) => {
+    return SessionApiUtil.logout().then( () => {
+      return dispatch(logoutCurrentUser());
     });
   };
 };

@@ -23,7 +23,7 @@ export default class SignUpForm extends React.Component {
   render() {
     return (
       <div className='signup-form-box'>
-
+        <div className='signup-title'>Sign Up</div>
         <form onSubmit={ this.handleSubmit }>
           <label>First Name:<br/>
             <input

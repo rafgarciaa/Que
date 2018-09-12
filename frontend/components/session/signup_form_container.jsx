@@ -11,6 +11,7 @@ const msp = state => {
       password: '',
     },
     formType: "Sign Up",
+    errors: state.errors,
   };
 };
 

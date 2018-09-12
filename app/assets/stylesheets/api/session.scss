@@ -38,12 +38,20 @@
 }
 
 .login-form-container {
-  // width: 100%;
+  float: right;
+  padding: 50px 70px 50px 50px;
 }
 
 .signup-form-container {
-  // width: 100%;
-  // border-right: 1px solid #e2e2e2;
+  float: left;
+  padding: 50px 50px 50px 70px;
+}
+
+.login-email-text-box, .login-password-text-box {
+  background: #e2e2e2;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 1px 1px rgba(200,200,200,0.3);
+  border-radius: 2px;
 }
 
 .main-logo {
@@ -61,5 +69,18 @@
 }
 
 .login-form-box {
-  padding-bottom: 50px;
+  // padding-bottom: 50px;
 }
+
+.login-title, .signup-title {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+// .signup-title {
+//   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+//   font-size: 13px;
+//   line-height: 1.4;
+// }

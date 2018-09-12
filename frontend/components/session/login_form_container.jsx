@@ -9,6 +9,7 @@ const msp = state => {
       password: '',
     },
     formType: "Log In",
+    errors: state.errors,
   };
 };
 

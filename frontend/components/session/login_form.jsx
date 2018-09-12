@@ -24,22 +24,20 @@ export default class LogInForm extends React.Component {
   render() {
     return (
       <div className='login-form-box'>
+        <div className='login-title'>Login</div><br/>
         <form onSubmit={ this.handleSubmit }>
-          <label>Email:
-            <br/>
-            <input
-              type='text'
-              value={this.state.username}
-              onChange={this.update('email')}></input>
-          </label>
-          <br/>
-          <label>Password:
-            <br/>
-            <input
-              type='password'
-              value={this.state.password}
-              onChange={this.update('password')}></input>
-          </label><br/>
+          <input
+            className='login-email-text-box'
+            type='text'
+            placeholder='Email'
+            value={this.state.username}
+            onChange={this.update('email')}></input><br/>
+          <input
+            className='login-password-text-box'
+            type='password'
+            placeholder='Password'
+            value={this.state.password}
+            onChange={this.update('password')}></input><br/>
 
           <button>{this.props.formType}</button>
         </form>
