@@ -2,14 +2,14 @@ import LogInForm from './login_form';
 import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
 
-const msp = state => {
+const msp = ({ errors }) => {
   return {
     form: {
       email: '',
       password: '',
     },
     formType: "Log In",
-    errors: state.errors,
+    logInErr: errors.session,
   };
 };
 

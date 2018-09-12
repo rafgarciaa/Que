@@ -26,3 +26,9 @@ Styling
 
 - refactor login_form & signup_form as individual components
 - fix styling for home page
+
+9 / 13 / 2018 LOG #3:
+  - Fix more styling for session form
+  - add session errors and errors reducers
+  - refactor session to have signup errors and login errors constants
+  - more styling

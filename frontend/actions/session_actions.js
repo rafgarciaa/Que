@@ -1,6 +1,7 @@
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
-export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+export const RECEIVE_SIGNUP_ERRORS = 'RECEIVE_SIGNUP_ERRORS';
+export const RECEIVE_LOGIN_ERRORS = 'RECEIVE_LOGIN_ERRORS';
 import * as SessionApiUtil from '../util/session_api_util';
 
 
@@ -17,9 +18,16 @@ const logoutCurrentUser = () => {
   };
 };
 
-const receiveErrors = (errors) => {
+const receiveSignUpErrors = (errors) => {
   return {
-    type: RECEIVE_SESSION_ERRORS,
+    type: RECEIVE_SIGNUP_ERRORS,
+    errors
+  };
+};
+
+const receiveLogInErrors = (errors) => {
+  return {
+    type: RECEIVE_LOGIN_ERRORS,
     errors
   };
 };
@@ -30,7 +38,7 @@ export const login = (user) => {
     return SessionApiUtil.login(user).then( (userFromServer) => {
       return dispatch(receiveCurrentUser(userFromServer));
     }, errors => {
-      return dispatch(receiveErrors(errors.responseJSON));
+      return dispatch(receiveLogInErrors(errors.responseJSON));
     });
   };
 };
@@ -40,7 +48,7 @@ export const signup = (user) => {
     return SessionApiUtil.signup(user).then( (userFromServer) => {
       return dispatch(receiveCurrentUser(userFromServer));
     }, errors => {
-      return dispatch(receiveErrors(errors.responseJSON));
+      return dispatch(receiveSignUpErrors(errors.responseJSON));
     });
   };
 };

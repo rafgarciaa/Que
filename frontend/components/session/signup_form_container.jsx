@@ -2,7 +2,7 @@ import SignUpForm from './signup_form';
 import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
 
-const msp = state => {
+const msp = ({ errors }) => {
   return {
     form: {
       first_name: '',
@@ -11,7 +11,7 @@ const msp = state => {
       password: '',
     },
     formType: "Sign Up",
-    errors: state.errors,
+    signUpErr: errors.session,
   };
 };
 

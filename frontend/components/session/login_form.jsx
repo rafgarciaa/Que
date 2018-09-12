@@ -21,26 +21,41 @@ export default class LogInForm extends React.Component {
     };
   }
 
+  renderErrors() {
+    if (this.props.formType === this.props.logInErr.type) {
+      return (
+        <ul>
+          { this.props.logInErr.errors.map( (error, idx) => {
+              return <li
+                key={`error-${idx}`}>{error}</li>;
+            }) }
+        </ul>
+      );
+    }
+  }
+
   render() {
     return (
       <div className='login-form-box'>
-        <div className='login-title'>Login</div><br/>
         <form onSubmit={ this.handleSubmit }>
           <input
-            className='login-email-text-box'
+            className='login-input-box'
             type='text'
             placeholder='Email'
             value={this.state.username}
-            onChange={this.update('email')}></input><br/>
+            onChange={this.update('email')}></input><br/><br/>
           <input
-            className='login-password-text-box'
+            className='login-input-box'
             type='password'
             placeholder='Password'
             value={this.state.password}
             onChange={this.update('password')}></input><br/>
 
-          <button>{this.props.formType}</button>
+          <button className='login-button'>Login</button>
         </form>
+        <div className='login-errors-list'>
+          { this.renderErrors() }
+        </div>
       </div>
     );
   }
