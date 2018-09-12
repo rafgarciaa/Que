@@ -38,27 +38,26 @@ export default class LogInForm extends React.Component {
     const demoUser = {email: 'demo_user@email.com', password: 'starwars'};
     return (
       <div className='login-form-box'>
+        <label className='session-label'>Login</label>
         <form onSubmit={ this.handleSubmit }>
           <input
-            className='login-input-box'
             type='text'
             placeholder='Email'
             value={this.state.username}
             onChange={this.update('email')}></input><br/><br/>
           <input
-            className='login-input-box'
             type='password'
             placeholder='Password'
             value={this.state.password}
             onChange={this.update('password')}></input><br/>
 
           <button className='login-button'>Login</button><br/>
+          <button
+            onClick={ () => this.props.processForm(demoUser) }
+            className='demo-user-button'>
+            Demo
+          </button>
         </form>
-        <button
-          onClick={ () => this.props.processForm(demoUser) }
-          className='demo-user-button'>
-          Demo
-        </button>
         <div className='login-errors-list'>
           { this.renderErrors() }
         </div>

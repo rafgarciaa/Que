@@ -35,8 +35,8 @@ export default class SignUpForm extends React.Component {
 
   render() {
     return (
+      <label className='session-label'>Sign Up
       <div className='signup-form-box'>
-
         <form onSubmit={ this.handleSubmit }>
           <div className='names-input-box'>
             <label>FIRST NAME<br/>
@@ -53,7 +53,7 @@ export default class SignUpForm extends React.Component {
                 value={this.state.last_name}
                 onChange={this.update('last_name')}/>
             </label><br/>
-          </div><br/>
+          </div>
 
         <label>EMAIL<br/>
             <input
@@ -61,7 +61,7 @@ export default class SignUpForm extends React.Component {
               type='text'
               value={this.state.username}
               onChange={this.update('email')}/>
-          </label><br/>
+          </label>
         <label>PASSWORD<br/>
             <input
               className='signup-input-box'
@@ -69,13 +69,16 @@ export default class SignUpForm extends React.Component {
               value={this.state.password}
               onChange={this.update('password')}/>
           </label><br/>
-
-        <button className='signup-button'>Sign Up</button><br/>
+        <label className='disclaimer'>By clicking "Sign Up" you indicate
+          that you have read and agree to Que's Terms of Service and
+          Privacy Policy.</label><br/><br/>
+        <button>Sign Up</button><br/>
         </form>
         <div className='signup-errors-list'>
           { this.renderErrors() }
         </div>
       </div>
+      </label>
     );
   }
 }

@@ -1,4 +1,4 @@
-9 / 11 / 2018 LOG #1:
+9 / 11 / 2018 LOG #1: (Tuesday)
 - npm init
 - npm install tools
 - add frontend folder & entry file
@@ -13,7 +13,7 @@
 - add frontend auth components
 
 
-9 / 12 / 2018 LOG #2:
+9 / 12 / 2018 LOG #2: (Wednesday)
 - bootstrap current user onto the window
 - protect frontend routes (login and signup forms)
 
@@ -27,7 +27,7 @@ Styling
 - refactor login_form & signup_form as individual components
 - fix styling for home page
 
-9 / 13 / 2018 LOG #3:
+9 / 13 / 2018 LOG #3: (Thursday)
   - Fix more styling for session form
   - add session errors and errors reducers
   - refactor session to have signup errors and login errors constants
@@ -40,6 +40,10 @@ Styling
   - questions controller
   - questions views
 
-  Qs..
-    - how to append current_user.id on to the question author_id parameter
-    - how to append topic on a drop down menu with react-redux as frontend
+9 / 14 / 2018 LOG #4: (Friday)
+goal for today:
+- toggle the session form to display and not display
+- add a footer to include my github and linked-in profiles
+
+- Fix more styling for session page/form
+- add disclaimer to sign up form

@@ -5,6 +5,11 @@ import Root from './components/root';
 
 // for testing only start
 import { login, logout } from './actions/session_actions';
+import { fetchQuestions,
+  fetchQuestion,
+  createQuestion,
+  deleteQuestion }
+  from './actions/question_actions';
 // for testing only end
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,6 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   window.login = login;
   window.logout = logout;
+  window.fetchQuestions = fetchQuestions;
+  window.fetchQuestion = fetchQuestion;
+  window.createQuestion = createQuestion;
+  window.deleteQuestion = deleteQuestion;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);

@@ -32,9 +32,11 @@ export default class SessionForm extends React.Component {
 
           <div className='form-container'>
             <div className='signup-form-container'>
+
               <SignUpFormContainer />
             </div>
             <div className="login-form-container">
+              
               <LogInFormContainer />
             </div>
           </div>
