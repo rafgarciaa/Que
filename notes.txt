@@ -32,3 +32,14 @@ Styling
   - add session errors and errors reducers
   - refactor session to have signup errors and login errors constants
   - more styling
+  - add demo user
+
+  - create questions branch
+  - generate questions migration
+  - question model
+  - questions controller
+  - questions views
+
+  Qs..
+    - how to append current_user.id on to the question author_id parameter
+    - how to append topic on a drop down menu with react-redux as frontend
