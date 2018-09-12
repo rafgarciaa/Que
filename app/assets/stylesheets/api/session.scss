@@ -8,18 +8,42 @@
 }
 
 .session-form-container {
+  // background: #fff;
+  // border: 1px solid black;
+  // padding-top: 25px;
+  // width: 650px;
+  // border-radius: 5px;
+  // box-shadow: 0 0 5px #888;
+
   background: #fff;
-  border: 1px solid black;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 0 5px #888;
+  border-radius: 4px;
   padding-top: 25px;
   width: 650px;
+  position: absolute;
+  bottom: initial;
+  left: 0;
+  right: 0;
+  margin: auto;
+  overflow-y: hidden;
+  top: 10%;
+  text-align: center;
+}
+
+.tag-description {
+  font-family: 'q_serif', Georgia,Times, "Times New Roman",
+  "Hiragino Kaku Gothic Pro", "Meiryo",serif;
+  color: #9c9594;
 }
 
 .login-form-container {
-  width: 650px;
+  // width: 100%;
 }
 
 .signup-form-container {
-
+  // width: 100%;
+  // border-right: 1px solid #e2e2e2;
 }
 
 .main-logo {
@@ -28,4 +52,14 @@
   font-weight: 700;
   font-size: 70px;
   margin: auto;
+}
+
+.signup-form-box {
+  // padding-right: 32px;
+  // box-sizing: border-box;
+  // padding-right: 375px
+}
+
+.login-form-box {
+  padding-bottom: 50px;
 }

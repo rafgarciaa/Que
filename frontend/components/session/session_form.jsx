@@ -27,7 +27,7 @@ export default class SessionForm extends React.Component {
       <div className='background-container'>
         <div className='session-form-container'>
           <h1 className='main-logo'>Que?</h1>
-          <p>A place to share knowledge and better understand the world</p>
+          <p className='tag-description'>A place to share knowledge and better understand the world</p>
           <div className='signup-form-container'>
             <SignUpFormContainer />
           </div>

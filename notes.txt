@@ -25,3 +25,4 @@ Styling
   - add some (questionable/initial) styling for login/signup form
 
 - refactor login_form & signup_form as individual components
+- fix styling for home page

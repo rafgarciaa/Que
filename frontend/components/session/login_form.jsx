@@ -39,7 +39,7 @@ export default class LogInForm extends React.Component {
               type='password'
               value={this.state.password}
               onChange={this.update('password')}></input>
-          </label>
+          </label><br/>
 
           <button>{this.props.formType}</button>
         </form>

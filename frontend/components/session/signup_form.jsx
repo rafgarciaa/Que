@@ -22,7 +22,7 @@ export default class SignUpForm extends React.Component {
 
   render() {
     return (
-      <div className='session-form-box'>
+      <div className='signup-form-box'>
 
         <form onSubmit={ this.handleSubmit }>
           <label>First Name:<br/>
@@ -48,7 +48,7 @@ export default class SignUpForm extends React.Component {
               type='password'
               value={this.state.password}
               onChange={this.update('password')}/>
-          </label>
+          </label><br/>
 
           <button>{this.props.formType}</button>
         </form>
