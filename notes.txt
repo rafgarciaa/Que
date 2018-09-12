@@ -16,3 +16,10 @@
 9 / 12 / 2018 LOG #2:
 - bootstrap current user onto the window
 - protect frontend routes (login and signup forms)
+
+Styling
+  - change css to scss files
+  - add login/signup (session) styling
+  - add background image
+  - add favicon
+  - add some (questionable/initial) styling for login/signup form

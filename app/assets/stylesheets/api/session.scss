@@ -1,0 +1,22 @@
+
+.background-container {
+  background-image: url('background-que.png');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.login-form-container {
+  padding: 20px;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.main-logo {
+  font-family: 'Libre Baskerville', serif;
+  color: #b92b26;
+  font-weight: 700;
+  font-size: 70px;
+  margin: auto;
+}
