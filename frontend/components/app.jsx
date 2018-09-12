@@ -4,17 +4,14 @@ import { AuthRoute } from '../util/route_util';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import GreetingContainer from './greeting/greeting_container';
+import SessionForm from './session/session_form';
 
 const App = () => (
   <div>
     <header>
-      <h1 className='main-logo'>Que?</h1>
-      <p>A place to share knowledge and better understand the world</p>
+      <AuthRoute path="/" component={SessionForm} />
       <GreetingContainer />
     </header>
-
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>
 );
 

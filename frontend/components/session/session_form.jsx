@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import SignUpFormContainer from './signup_form_container';
+import LogInFormContainer from './login_form_container';
 
 export default class SessionForm extends React.Component {
   constructor(props) {
@@ -24,27 +25,15 @@ export default class SessionForm extends React.Component {
   render() {
     return (
       <div className='background-container'>
-
-        <div className='login-form-container'>
-          <form onSubmit={ this.handleSubmit }>
-            <label>Email:
-              <br/>
-              <input
-                type='text'
-                value={this.state.username}
-                onChange={this.update('email')}></input>
-            </label>
-            <br/>
-            <label>Password:
-              <br/>
-              <input
-                type='password'
-                value={this.state.password}
-                onChange={this.update('password')}></input>
-            </label>
-
-            <button>{this.props.formType}</button>
-          </form>
+        <div className='session-form-container'>
+          <h1 className='main-logo'>Que?</h1>
+          <p>A place to share knowledge and better understand the world</p>
+          <div className='signup-form-container'>
+            <SignUpFormContainer />
+          </div>
+          <div className="login-form-container">
+            <LogInFormContainer />
+          </div>
         </div>
       </div>
     );

@@ -7,10 +7,19 @@
   position: fixed;
 }
 
+.session-form-container {
+  background: #fff;
+  border: 1px solid black;
+  padding-top: 25px;
+  width: 650px;
+}
+
 .login-form-container {
-  padding: 20px;
-  background-color: white;
-  border: 2px solid black;
+  width: 650px;
+}
+
+.signup-form-container {
+
 }
 
 .main-logo {
