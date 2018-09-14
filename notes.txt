@@ -47,3 +47,5 @@ goal for today:
 
 - Fix more styling for session page/form
 - add disclaimer to sign up form
+- add questions slice to entities slice of state
+- change greeting/greeting container to navbar and navbar container
