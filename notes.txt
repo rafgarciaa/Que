@@ -49,3 +49,15 @@ goal for today:
 - add disclaimer to sign up form
 - add questions slice to entities slice of state
 - change greeting/greeting container to navbar and navbar container
+
+Interesting bug:
+  - missed a model validation (uniqueness) for user (email param), and it only errors out on a database/server level but not on the frontend.
+
+- add navbar link items
+- start question components
+  + question modal
+  + question index
+  + question index container
+  + question index item
+
+- add selectors file in reducers for grabbing object items from state

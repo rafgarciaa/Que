@@ -8,7 +8,7 @@
 + Users can't utilize features unless logged-in (asking questions & answering questions)
 
 ### 3. Questions
-+ Logged in users can answer questions
++ Logged in users can ask questions
 
 ### 4. Answers
 + Logged in users can answer questions

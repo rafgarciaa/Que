@@ -1,0 +1,30 @@
+.homepage-items-container {
+  overflow: auto;
+  height: 100%;
+  min-width: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: #fafafa;
+}
+
+.question-modal-container {
+
+}
+
+.question-index-container {
+  margin: 100px 0 10px 0;
+  width: 600px;
+  font-size: 15px;
+  word-wrap: break-word;
+  font-weight: 400;
+  background: #fff;
+}
+
+.quetion-item-box {
+  border: 1px solid #efefef;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 1px 1px 0 #f7f7f7;
+  padding: 16px 18px;
+}

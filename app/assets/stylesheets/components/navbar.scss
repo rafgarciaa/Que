@@ -30,23 +30,30 @@
     font-family: 'Libre Baskerville', serif;
   }
 
+  h3 {
+    margin-top: 20px;
+  }
+
   input {
-    margin-top: 15px;
-    width: 337px;
-    height: 29px;
+    background-image: image_url('search.png');
+    background-size: 13px;
     border: 1px solid #e2e2e2;
     border-radius: 4px;
     padding-left: 26px;
+    background: url(//qsf.fs.quoracdn.net/-3-images.new_grid.QuoraSearch.png-26-86c32b1ac26e4161.png) no-repeat 8px center;
+    background-size: 13px;
+    margin-top: 15px;
+    width: 337px;
+    height: 29px;
+    font-size: 15px;
+    color: #333;
+    font-weight: lighter;
   }
 }
 
 .header-list {
   list-style: none;
   display: flex;
-
-  li {
-    color: #b92b27;
-  }
 
   button:hover {
     background: #ddd;
@@ -55,11 +62,17 @@
 
 .header-btn {
   box-sizing: border-box;
-  border-radius: 3px;
+  border-radius: 5px;
   box-shadow: 0 1px 1px 0 rgba(200,200,200,0.2);
   display: inline-block;
   background: #b92b27;
   color: #fff;
+  height: 30px;
+  width: 96px;
+  margin-top: 15px;
+  font-weight: 500;
+  font-family: inherit;
+  font-size: 15px;
 }
 
 .header-btn:hover {
