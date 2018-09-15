@@ -1,7 +1,7 @@
 import Navbar from './navbar';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import { fetchQuestions } from '../../actions/question_actions';
+import { createQuestion } from '../../actions/question_actions';
 
 const msp = state => {
   return {
@@ -12,7 +12,7 @@ const msp = state => {
 const mdp = dispatch => {
   return {
     logout: () => dispatch(logout()),
-    fetchQuestions: () => dispatch(fetchQuestions())
+    createQuestion: question => dispatch(createQuestion(question))
   };
 };
 

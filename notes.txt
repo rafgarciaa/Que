@@ -1,4 +1,4 @@
-9 / 11 / 2018 LOG #1: (Tuesday)
+9 / 11 / 2018 LOG #1: (TUESDAY)
 - npm init
 - npm install tools
 - add frontend folder & entry file
@@ -13,7 +13,7 @@
 - add frontend auth components
 
 
-9 / 12 / 2018 LOG #2: (Wednesday)
+9 / 12 / 2018 LOG #2: (WEDNESDAY)
 - bootstrap current user onto the window
 - protect frontend routes (login and signup forms)
 
@@ -27,7 +27,7 @@ Styling
 - refactor login_form & signup_form as individual components
 - fix styling for home page
 
-9 / 13 / 2018 LOG #3: (Thursday)
+9 / 13 / 2018 LOG #3: (THURSDAY)
   - Fix more styling for session form
   - add session errors and errors reducers
   - refactor session to have signup errors and login errors constants
@@ -40,11 +40,7 @@ Styling
   - questions controller
   - questions views
 
-9 / 14 / 2018 LOG #4: (Friday)
-goal for today:
-- toggle the session form to display and not display
-- add a footer to include my github and linked-in profiles
-
+9 / 14 / 2018 LOG #4: (FRIDAY)
 - Fix more styling for session page/form
 - add disclaimer to sign up form
 - add questions slice to entities slice of state
@@ -61,3 +57,24 @@ Interesting bug:
   + question index item
 
 - add selectors file in reducers for grabbing object items from state
+
+9 / 15 / 2018 LOG #5: (SATURDAY)
+- fix navbar
+
+Today's learning:
+  <NavLink>
+  A special version of the <Link> that will add styling attributes to the rendered element when it matches the current URL.
+
+- add avatar package (npm install avatar)
+- add toggle drop down for user avatar logout button
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Additional features (if time permits):
+- toggle the session form to display and not display
+- add a footer to include my github and linked-in profiles on splash page

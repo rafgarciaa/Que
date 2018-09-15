@@ -1,35 +1,67 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Avatar from 'react-avatar';
+import { Link, NavLink } from 'react-router-dom';
 
 export default class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleDropDown = this.toggleDropDown.bind(this);
+    this.state = {
+      showDropDown: false
+    };
   }
 
-  handleSubmit(e) {
+  toggleDropDown() {
+    if (this.state.showDropDown === false) {
+      $('.logout-dropdown').addClass('logout-dropdown-show');
+    } else {
+      $('.logout-dropdown').removeClass('logout-dropdown-show');
+    }
+    this.setState({ showDropDown: !this.state.showDropDown });
+  }
+
+  handleSubmit(e) { // logout
     e.preventDefault();
     this.props.logout();
   }
 
   render() {
     if (this.props.currentUser) {
+      const name = this.props.currentUser.first_name + ' ' +
+      this.props.currentUser.last_name;
       return (
         <header className='header'>
-          <nav className='header-nav'>
-            <h1 className='header-logo'>Que?</h1>
+          <div className='header-nav'>
+            <Link to={`/`} className='header-logo'>Que?</Link>
 
-            <ul className='header-list'>
-              <li className='nav-link-item'>Home</li>
-              <li className='nav-link-item'>Answer</li>
-            </ul>
+            <div className='header-item'>
+              <NavLink to={`/`} className='nav-item-link'>
+                <span className='icon-name'>Home</span>
+              </NavLink>
+            </div>
+
+            <div className='header-item'>
+              <NavLink to={`/answer`} className='nav-item-link'>
+                <span className='icon-name'>Answer</span>
+              </NavLink>
+            </div>
 
             <input type='text' placeholder='Search Que'></input>
-            <h3>Welcome, {this.props.currentUser.first_name}</h3>
+
+            <div className='avatar-dropdown'>
+              <Avatar className='avatar'
+                onClick={ this.toggleDropDown }
+                name={name} round={true} color='#619ad1'
+                size='30' textSizeRatio={1.5} />
+              <span className='logout-dropdown'
+                onClick={ this.handleSubmit }>Logout</span>
+            </div>
+
             <button
               className='header-btn'
-              onClick={ this.handleSubmit }>Logout</button>
-          </nav>
+              >Add</button>
+          </div>
         </header>
       );
     } else {
@@ -37,5 +69,3 @@ export default class Navbar extends React.Component {
     }
   }
 }
-
-// <div className='navbar-title'>Home</div> // at line 40

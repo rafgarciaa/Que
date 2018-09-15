@@ -16,7 +16,18 @@
 
 .header a {
   display: block;
-  padding: 10px 20px;
+  padding: 5px 15px;
+  font-family: 'Libre Baskerville', serif;
+  color: #c40d26;
+  font-weight: bolder;
+  font-size: 25px;
+  text-decoration: none;
+
+  .icon-name {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 50px;
+  }
 }
 
 .header-nav {
@@ -26,11 +37,12 @@
   margin: 0 auto;
   width: 50%;
 
-  h1, h3 {
-    font-family: 'Libre Baskerville', serif;
+  .header-logo {
+    margin-top: 5px
   }
 
   h3 {
+    font-family: 'Libre Baskerville', serif;
     margin-top: 20px;
   }
 
@@ -44,20 +56,44 @@
     background-size: 13px;
     margin-top: 15px;
     width: 337px;
-    height: 29px;
+    height: 25px;
     font-size: 15px;
     color: #333;
     font-weight: lighter;
   }
 }
 
-.header-list {
-  list-style: none;
-  display: flex;
+.avatar-dropdown {
+  margin-top: 15px;
 
-  button:hover {
-    background: #ddd;
+  .avatar:hover {
+    cursor: pointer;
   }
+}
+
+.logout-dropdown {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 575px;
+  background: #f6f6f6;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(200,200,200,0.7);
+  padding: 8px 16px;
+  line-height: 1.25;
+  cursor: pointer;
+  color: #2b6dad;
+  width: 80px;
+  text-align: center;
+}
+
+.logout-dropdown:hover {
+  background-color: #dfeffa;
+}
+
+.logout-dropdown-show {
+  display: block;
 }
 
 .header-btn {
@@ -76,6 +112,5 @@
 }
 
 .header-btn:hover {
-  background: #ddd;
   cursor: pointer;
 }
