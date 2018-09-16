@@ -81,7 +81,10 @@ Today's learning:
 - populate question form
 - add styling to question form and it's elements
 
+9 / 16 / 2018 LOG #6: (SUNDAY)
+-
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Additional features (if time permits):
 - toggle the session form to display and not display
-- add a footer to include my github and linked-in profiles on splash page
+- toggle a typing animation for demo user using https://github.com/mattboldt/typed.js/

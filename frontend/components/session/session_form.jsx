@@ -36,19 +36,27 @@ export default class SessionForm extends React.Component {
               <SignUpFormContainer />
             </div>
             <div className="login-form-container">
-              
+
               <LogInFormContainer />
             </div>
+          </div>
+
+          <div className='footer-nav'>
+            Que? by Rafael Garcia, inspired by Quora.
+            Check me out on
+          <a className='footer-link' href='#'>
+            <i className="fab fa-github"></i>
+            Github
+          </a>
+           &
+          <a className='footer-link' href='#'>
+            <i className="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+          
           </div>
         </div>
       </div>
     );
   }
 }
-
-
-// <div className='footer-nav'>
-//   Que? by Rafael Garcia. Check me out:
-//   <a href='https://github.com/rafgarciaa'> Github</a>
-//   <a href='https://www.linkedin.com/in/raf-garcia-engr/'> LinkedIn</a>
-// </div>

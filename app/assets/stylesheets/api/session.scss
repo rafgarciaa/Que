@@ -70,6 +70,27 @@ html, body {
   button:hover {
     cursor: pointer;
   }
+
+  .footer-nav {
+    padding: 16px;
+    border-top: 1px solid #e2e2e2;
+    background: #fafafa;
+    color: #949494;
+
+    a {
+      margin: 0 3px 0 1px;
+      color: #949494;
+      text-decoration: none;
+
+      i {
+        margin: 0 3px 0 3px;
+      }
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .login-form-container {
