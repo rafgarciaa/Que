@@ -82,7 +82,10 @@ Today's learning:
 - add styling to question form and it's elements
 
 9 / 16 / 2018 LOG #6: (SUNDAY)
--
+Questions:
+  + Cannot read property 'body' of undefined when I ask a new question
+  + how do I create a new page altogether but still have the navbar there
+  +
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Additional features (if time permits):

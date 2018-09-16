@@ -7,7 +7,7 @@ class Api::QuestionsController < ApplicationController
     @question.topic_id = 1
 
     if @question.save
-      render :index # render index page and append question to it (?)
+      render :show # render index page and append question to it (?)
     else
       render json: @question.errors.full_messages, status: 422
     end

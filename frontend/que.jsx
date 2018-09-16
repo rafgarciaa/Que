@@ -8,8 +8,9 @@ import { login, logout } from './actions/session_actions';
 import { fetchQuestions,
   fetchQuestion,
   createQuestion,
-  deleteQuestion }
-  from './actions/question_actions';
+  deleteQuestion
+} from './actions/question_actions';
+import { selectAllQuestions } from './reducers/selectors';
 // for testing only end
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-
+// for testing only start
   window.store = store;
   window.login = login;
   window.logout = logout;
@@ -35,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchQuestion = fetchQuestion;
   window.createQuestion = createQuestion;
   window.deleteQuestion = deleteQuestion;
+  window.selectAllQuestions = selectAllQuestions;
+// for testing only end
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
