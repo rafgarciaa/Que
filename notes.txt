@@ -62,17 +62,24 @@ Interesting bug:
 - fix navbar
 
 Today's learning:
-  <NavLink>
+  + <NavLink>
   A special version of the <Link> that will add styling attributes to the rendered element when it matches the current URL.
 
-- add avatar package (npm install avatar)
+  + react-avatar component exists
+  Universal avatar makes it possible to fetch/generate an avatar based on the information you have about that user. We use a fallback system that if for example an invalid Facebook ID is used it will try Google, and so on.
+
+  + react-modal component exists
+  Accessible modal dialog component for React.JS
+
+- add react-avatar package (npm install react-avatar)
 - add toggle drop down for user avatar logout button
-
-
-
-
-
-
+- add a protected route for the index page
+- add question form & question form container
+- consolidate home page items (navbar, question index, etc) onto a homepage component
+- add react-modal package (npm install react-modal)
+- add question button component to activate modal
+- populate question form
+- add styling to question form and it's elements
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Additional features (if time permits):

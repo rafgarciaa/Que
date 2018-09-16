@@ -1,14 +1,17 @@
 import React from 'react';
 import Avatar from 'react-avatar';
 import { Link, NavLink } from 'react-router-dom';
+import QuestionButton from './question_btn';
 
 export default class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleDropDown = this.toggleDropDown.bind(this);
+    this.toggleActive = this.toggleActive.bind(this);
     this.state = {
-      showDropDown: false
+      showDropDown: false,
+      activeLink: false
     };
   }
 
@@ -19,6 +22,15 @@ export default class Navbar extends React.Component {
       $('.logout-dropdown').removeClass('logout-dropdown-show');
     }
     this.setState({ showDropDown: !this.state.showDropDown });
+  }
+
+  toggleActive() {
+    if (this.state.activeLink === false) {
+      $('.header-item').addClass('header-item-active');
+    } else {
+      $('.header-item').removeClass('header-item-active');
+    }
+    this.setState({ activeLink: !this.state.activeLink });
   }
 
   handleSubmit(e) { // logout
@@ -33,16 +45,18 @@ export default class Navbar extends React.Component {
       return (
         <header className='header'>
           <div className='header-nav'>
-            <Link to={`/`} className='header-logo'>Que?</Link>
+            <Link to='/index' className='header-logo'>Que?</Link>
 
             <div className='header-item'>
-              <NavLink to={`/`} className='nav-item-link'>
+              <NavLink to='/index' className='nav-item-link'
+                activeClassName='active-nav'>
                 <span className='icon-name'>Home</span>
               </NavLink>
             </div>
 
             <div className='header-item'>
-              <NavLink to={`/answer`} className='nav-item-link'>
+              <NavLink to='/answer' className='nav-item-link'
+                activeClassName='active-nav'>
                 <span className='icon-name'>Answer</span>
               </NavLink>
             </div>
@@ -54,13 +68,11 @@ export default class Navbar extends React.Component {
                 onClick={ this.toggleDropDown }
                 name={name} round={true} color='#619ad1'
                 size='30' textSizeRatio={1.5} />
-              <span className='logout-dropdown'
-                onClick={ this.handleSubmit }>Logout</span>
+              <div className='logout-dropdown'
+                onClick={ this.handleSubmit }>Logout</div>
             </div>
 
-            <button
-              className='header-btn'
-              >Add</button>
+            <QuestionButton />
           </div>
         </header>
       );

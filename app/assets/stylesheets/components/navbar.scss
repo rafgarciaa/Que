@@ -1,5 +1,4 @@
 .header {
-  color: #b92b26;
   background: #fff;
   width: 100%;
   min-width: 1000px;
@@ -9,7 +8,7 @@
   border-bottom: 1px solid #ddd;
   box-shadow: 0 3px 2px -2px rgba(200,200,200,0.2);
   position: fixed;
-  z-index: 1;
+  // z-index: 1;
   top: 0;
   left: 0;
 }
@@ -18,7 +17,6 @@
   display: block;
   padding: 5px 15px;
   font-family: 'Libre Baskerville', serif;
-  color: #c40d26;
   font-weight: bolder;
   font-size: 25px;
   text-decoration: none;
@@ -38,7 +36,8 @@
   width: 50%;
 
   .header-logo {
-    margin-top: 5px
+    margin-top: 5px;
+    color: #c40d26;
   }
 
   h3 {
@@ -55,12 +54,25 @@
     background: url(//qsf.fs.quoracdn.net/-3-images.new_grid.QuoraSearch.png-26-86c32b1ac26e4161.png) no-repeat 8px center;
     background-size: 13px;
     margin-top: 15px;
-    width: 337px;
+    width: 475px;
     height: 25px;
     font-size: 15px;
     color: #333;
     font-weight: lighter;
   }
+
+  .header-item:hover {
+    background: rgb(246, 246, 246);
+  }
+
+  .nav-item-link {
+    color: #666;
+  }
+}
+
+.nav-item-link.active-nav {
+  color: #c40d26;
+  border-bottom: 2px solid #b92b27;
 }
 
 .avatar-dropdown {
@@ -73,9 +85,9 @@
 
 .logout-dropdown {
   display: none;
-  position: absolute;
   top: 50px;
-  right: 575px;
+  // right: 575px;
+  position: absolute;
   background: #f6f6f6;
   border: 1px solid #ccc;
   border-radius: 3px;

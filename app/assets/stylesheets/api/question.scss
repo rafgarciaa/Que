@@ -1,15 +1,103 @@
-.homepage-items-container {
-  // overflow: auto;
-  // height: 100%;
-  // min-width: 1000px;
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: center;
-  // background: #fafafa;
+.question-modal-overlay {
+  background: rgba(0,0,0,0.65);
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: auto;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.4;
 }
 
-.question-modal-container {
+.question-modal-form {
+  color: #949494;
+  position: relative;
+  margin-left: 620px;
+  margin-bottom: 585px;
+  width: 620px;
+}
 
+.question-form {
+  padding: 32px 32px 24px 32px;
+  border-radius: 4px 4px 0 0;
+  background-color: #fff;
+
+  .modal-close {
+    color: #949494;
+    font-size: 20px;
+    float: right;
+  }
+
+  .modal-close:hover {
+    color: #3c78b2;
+    cursor: pointer;
+  }
+
+  .asker-name {
+    margin-left: 5px;
+  }
+
+  .asker-name:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .avatar:hover {
+    cursor: pointer;
+  }
+
+  input {
+    margin: 10px 0 10px 0;
+    border: none;
+    font-family: 'q_serif', Georgia, Times, "Times New Roman",
+    "Hiragino Kaku Gothic Pro", "Meiryo", serif;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  .border-line {
+    // margin-top: 20px;
+    border: 1px solid rgb(226, 226, 226);
+  }
+}
+
+.question-form-footer {
+  background: #f6f6f6;
+  border-radius: 0 0 4px 4px;
+  padding: 15px;
+  border-top: 1px solid #e2e2e2;
+
+  .cancel-question {
+    margin-top: 20px;
+  }
+
+  .cancel-question:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .add-question-button {
+    padding: 6px 8px;
+    margin-left: 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background: #3e78ad;
+    color: #fff;
+    border: 1px solid #3a66ad;
+    box-shadow: 0 1px 1px 0 rgba(200,200,200,0.6);
+    font-weight: 500;
+    font-size: 15px;
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
 }
 
 .question-index-container {

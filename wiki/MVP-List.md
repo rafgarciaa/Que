@@ -17,5 +17,8 @@
 + Users have a feed of other user's questions
 + Users have a public profile available to other users that have their answered questions, questions asked
 
-### 6. Search Users
-+ Users can search for other users through text to see that other user's profile
+### 6. Search Questions
++ Users can search for questions that have been already asked
+
+### 7. Topics/Tags
++ Users can choose a specific topic for their questions
