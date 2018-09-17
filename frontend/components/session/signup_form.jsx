@@ -72,7 +72,12 @@ export default class SignUpForm extends React.Component {
         <label className='disclaimer'>By clicking "Sign Up" you indicate
           that you have read and agree to Que's Terms of Service and
           Privacy Policy.</label><br/><br/>
-        <button>Sign Up</button><br/>
+
+        <div>
+          <a onClick={ this.props.toggleSignUp }>Cancel</a>
+          <button>Sign Up</button>
+        </div>
+
         </form>
         <div className='signup-errors-list'>
           { this.renderErrors() }

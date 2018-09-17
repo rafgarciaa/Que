@@ -113,7 +113,24 @@ html, body {
   }
 }
 
+.signup-form-toggle {
+  color: #949495;
+  text-align: left;
+  a {
+    color: #3178bb;
+  }
+  a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.signup-form-toggle-hide {
+  display: none;
+}
+
 .signup-form-container {
+  display: none;
   text-align: left;
   padding: 0 25px 0px 10px;
   width: 90%;
@@ -124,6 +141,10 @@ html, body {
   font-weight: bold;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   // border-right: 1px solid #e6e6e6;
+}
+
+.signup-form-container-show {
+  display: block;
 }
 
 .login-form-box {
@@ -157,6 +178,15 @@ html, body {
     letter-spacing: normal;
     font-weight: normal;
     line-height: normal;
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 135px;
+    color: #2b6dad;
+    font-size: 13px;
+    font-weight: lighter;
   }
 }
 

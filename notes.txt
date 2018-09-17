@@ -105,7 +105,8 @@ Learning:
   - there is a reverse function from the Array prototype similar to ruby,
   that reverses the order of elements in an array
 
+- toggle the session form to display and not display
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Additional features (if time permits):
-- toggle the session form to display and not display
 - toggle a typing animation for demo user using https://github.com/mattboldt/typed.js/
