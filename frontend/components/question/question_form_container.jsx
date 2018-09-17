@@ -4,6 +4,7 @@ import QuestionForm from './question_form';
 
 const msp = state => {
   return {
+    topics: state.entities.topics,
     currentUser: state.entities.users[state.session.id],
   };
 };

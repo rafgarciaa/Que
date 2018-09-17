@@ -68,9 +68,7 @@ export const createQuestion = question => {
 
 export const deleteQuestion = id => {
   return dispatch => {
-    // debugger
     return QuestionApiUtil.deleteQuestion(id).then( () => {
-      // debugger
       return dispatch(removeQuestion(id));
       // console.log('successfully deleted');
     });

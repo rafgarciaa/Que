@@ -110,19 +110,26 @@ Learning:
 9 / 17 / 2018 LOG #7: (MONDAY)
 Goals for today:
 - question item
-  + add a delete button for each question item
-  + don't allow other users to delete other people's questions
-  + add topic name to be rendered along with each question item
+  DONE + add a delete button for each question item
+  DONE + add topic name to be rendered along with each question item
+  DONE + add asker name to be rendered along with each question item
 
-- add a dropdown menu listing all the topics for question form
+DONE - add a dropdown menu listing all the topics for question form
+DONE - add a question view component && add styling
 
 Question:
-  + how can I add the topic name with just the topic_id association
-    - how do I index at the topics slice of entities to grab the name of the topic
-  + how can I add the author name with just the author_id association
-    - how do I index at the users slice of entities to grab the name of the user
-  + Cannot read property 'id' of undefined when deleting a question
-  + how can I pass the topic id from the dropdown menu
+  SOLVED + how can I pass the topic id from the dropdown menu
+  SOLVED + how can I make my navbar persist in every page I visit
+  NOT YET SOLVED + when I go to route '/' it doesn't render anything
+    - how do I make my path '/' always redirect to /index,
+    if and only if logged in
+  SOLVED + how do I make the data persist
+
+To do:
+  - add logic denying users deleting other users' questions
+  - edit question button & logic denying users to edit other user's
+  questions
+  - add topics view page (render all question with that topic_id)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Additional features (if time permits):
 - toggle a typing animation for demo user using https://github.com/mattboldt/typed.js/
