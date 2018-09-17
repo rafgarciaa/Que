@@ -8,7 +8,7 @@ export default class QuestionForm extends React.Component {
     this.state = {
       body: '',
       author_id: this.props.currentUser.id,
-      topic_id: 7
+      topic_id: 1
     };
   }
 
