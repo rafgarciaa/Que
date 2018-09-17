@@ -125,11 +125,21 @@ Question:
     if and only if logged in
   SOLVED + how do I make the data persist
 
+
+9 / 18 / 2018 LOG #8: (TUESDAY)
 To do:
-  - add logic denying users deleting other users' questions
+  DONE - add logic denying users deleting other users' questions
   - edit question button & logic denying users to edit other user's
   questions
   - add topics view page (render all question with that topic_id)
+  - add comment box in each question item @ /index page
+    + for now just add a comment box for each question regardless if it's
+    answered or not since answers slice of entities still doesn't exist
+
+    + only add a comment box in each question that has already been answered
+  - add answer box that pops up when you click a question
+  - add an /answer page where it loads all the questions not answered
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Additional features (if time permits):
 - toggle a typing animation for demo user using https://github.com/mattboldt/typed.js/

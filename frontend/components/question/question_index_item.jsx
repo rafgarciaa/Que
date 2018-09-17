@@ -5,10 +5,22 @@ import { Link } from 'react-router-dom';
 class QuestionIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    // this.deleteQuestionItem = this.deleteQuestionItem.bind(this);
+    this.deleteQuestionItem = this.deleteQuestionItem.bind(this);
+  }
+
+  deleteQuestionItem() {
+    if (this.props.currentUser.id === this.props.question.author_id) {
+      // return console.log('I own this question.');
+      this.props.deleteQuestion(this.props.question.id);
+    } else {
+      // return console.log('I do not own this question.');
+      return alert("Can't delete a question you did not ask!");
+    }
   }
 
   render() {
+    const currentUserName = this.props.currentUser.first_name + ' '
+    + this.props.currentUser.last_name;
     const author = this.props.users[this.props.question.author_id]
     || { first_name: '', last_name: '' };
     const askerName = author.first_name + ' ' + author.last_name;
@@ -17,13 +29,22 @@ class QuestionIndexItem extends React.Component {
     || { topic: '' };
     const topicName = topic.name;
 
+    let avatar;
+    if (currentUserName === askerName) {
+      avatar = <Avatar className='avatar' name={askerName} round={true}
+        color='#619ad1' size='30' textSizeRatio={1.5} />;
+    } else {
+      avatar = <Avatar className='avatar' name={askerName} round={true}
+        size='30' textSizeRatio={1.5} />;
+    }
+
     return (
       <div className='question-item-box'>
-        <span className='question-delete-button'>&times;</span>
+        <span onClick={ this.deleteQuestionItem }
+          className='question-delete-button'>&times;</span>
         <div className='question-item-header'>
-          <Avatar className='avatar'
-            name={askerName} round={true} color='#619ad1'
-            size='30' textSizeRatio={1.5} />
+
+          { avatar }
 
           <a className='question-asker'>
             { askerName }
@@ -34,6 +55,21 @@ class QuestionIndexItem extends React.Component {
           <Link to={`/questions/${this.props.question.id}`}>
             { this.props.question.body }
           </Link>
+        </div>
+
+        <div className='upvote-button'>
+          <i className="fas fa-arrow-up"></i>
+          UpVote · 1
+        </div>
+
+        <div className='question-item-comment-box'>
+          <Avatar className='avatar'
+            name={currentUserName} round={true} color='#619ad1'
+            size='30' textSizeRatio={1.5} />
+          <div id='input' className='comment-box'
+            contentEditable='true'
+            data-text='Add a comment...'/>
+          <button className='add-comment-button'>Comment</button>
         </div>
       </div>
     );
