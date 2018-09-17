@@ -5,11 +5,18 @@ export default class QuestionForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    // debugger
     this.state = {
       body: '',
       author_id: this.props.currentUser.id,
-      topic_id: Object.values(this.props.topics)[0].id
+      topic_id: ''
     };
+  }
+
+  componentDidMount() {
+    this.props.fetchTopics();
+    // debugger
+    // this.setState({ topic_id: Object.values(this.props.topics)[0].id });
   }
 
   handleSubmit(e) {
@@ -56,6 +63,7 @@ export default class QuestionForm extends React.Component {
           <select id='dropdown' value={ this.state.topic_id }
             onChange={ this.update('topic_id') }
             className='topic-downdown'>
+            <option value="">--Choose a topic--</option>
             {
               Object.values(this.props.topics).map( (topic, idx) => {
                 return <option

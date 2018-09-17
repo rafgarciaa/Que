@@ -10,10 +10,8 @@ class QuestionIndexItem extends React.Component {
 
   deleteQuestionItem() {
     if (this.props.currentUser.id === this.props.question.author_id) {
-      // return console.log('I own this question.');
       this.props.deleteQuestion(this.props.question.id);
     } else {
-      // return console.log('I do not own this question.');
       return alert("Can't delete a question you did not ask!");
     }
   }
@@ -57,9 +55,21 @@ class QuestionIndexItem extends React.Component {
           </Link>
         </div>
 
-        <div className='upvote-button'>
-          <i className="fas fa-arrow-up"></i>
-          UpVote · 1
+        <div className='buttons'>
+          <div className='upvote-button'>
+            <i className="fas fa-arrow-up"></i>
+            UpVote · { Math.floor(Math.random() * 20) + 1 }
+          </div>
+
+          <div className='buttons-left'>
+            <div className='downvote-button'>
+              <i className="fas fa-arrow-down"></i>
+            </div>
+
+            <div className='edit-button'>
+              <i className="fas fa-ellipsis-h"></i>
+            </div>
+          </div>
         </div>
 
         <div className='question-item-comment-box'>

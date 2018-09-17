@@ -185,25 +185,6 @@
   }
 }
 
-.question-item-container {
-  margin: 0 auto;
-  width: 600px;
-  margin-top: 100px;
-
-  .question-item-body {
-    border-bottom: 1px solid #efefef;
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 16px 18px;
-    margin-bottom: 8px;
-    font-family: Georgia,Times,"Times New Roman","Hiragino Kaku Gothic Pro","Meiryo",serif;
-    font-weight: bold;
-    line-height: 1.3;
-    color: #333;
-    font-size: 23px;
-  }
-}
-
 .question-delete-button {
   font-size: 20px;
   float: right;
@@ -219,22 +200,69 @@
   border-radius: 50%;
 }
 
-.upvote-button {
-  padding: 8px 12px;
-  color: #666;
-  font-size: 14px;
-  border-radius: 20px;
-  width: 85px;
+.buttons {
+  // align-items: center;
+  display: flex;
+  justify-content: space-between;
 
-  i {
+  .upvote-button {
+    margin: 5px 0;
+    padding: 5px 5px 5px 10px;
+    color: #666;
+    font-size: 14px;
+    border-radius: 20px;
+    width: 100px;
+
+    i {
+      text-align: center;
+      margin-right: 5px;
+    }
+  }
+
+  .downvote-button, .edit-button {
+    display: inline;
+    padding: 4px 10px 4px 10px;
+    margin: 9px 0;
+    color: #666;
+    font-size: 14px;
+    border-radius: 20px;
+    width: 6px;
     margin-right: 5px;
+  }
+
+  .upvote-button:hover, .downvote-button:hover, .edit-button:hover {
+    background-color: #fafafa;
+    cursor: pointer;
+  }
+
+  .buttons-left {
+    margin-top: 5px;
+
+    .edit-dropdown {
+      display: none;
+      position: absolute;
+      background: #f6f6f6;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px rgba(200,200,200,0.7);
+      padding: 8px 16px;
+      line-height: 1.25;
+      cursor: pointer;
+      color: #2b6dad;
+      width: 80px;
+      text-align: center;
+    }
+
+    .edit-dropdown:hover {
+      background-color: #dfeffa;
+    }
+
+    .edit-dropdown-show {
+      display: block;
+    }
   }
 }
 
-.upvote-button:hover {
-  background-color: #fafafa;
-  cursor: pointer;
-}
 
 .question-item-comment-box {
   border: 0;
@@ -242,14 +270,14 @@
   min-height: 27px;
   padding: 16px;
   border-radius: 4px;
-  margin-top: 10px;
+  display: flex;
 
   .avatar, .comment-box, .add-comment-button {
     display: inline;
   }
 
   .avatar {
-    position: absolute;
+    // position: fixed;
   }
 
   .avatar:hover {
@@ -267,7 +295,7 @@
     box-shadow: 1px 1px 1px 0 lightgray inset;
     font: -moz-field;
     font: -webkit-small-control;
-    margin-left: 38px;
+    margin-left: 8px;
     padding: 3px 5px 4px;
     width: 265px;
     font-size: 13px;
@@ -281,9 +309,10 @@
     content:attr(data-text);
   }
 
-
   button {
-    position: absolute;
+    // position: fixed;
+    height: 30px;
+    display: flex;
     display: inline-block;
     font-weight: 500;
     outline: 0;

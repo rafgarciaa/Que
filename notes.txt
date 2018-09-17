@@ -132,7 +132,7 @@ To do:
   - edit question button & logic denying users to edit other user's
   questions
   - add topics view page (render all question with that topic_id)
-  - add comment box in each question item @ /index page
+  DONE- add comment box in each question item @ /index page
     + for now just add a comment box for each question regardless if it's
     answered or not since answers slice of entities still doesn't exist
 
@@ -140,6 +140,9 @@ To do:
   - add answer box that pops up when you click a question
   - add an /answer page where it loads all the questions not answered
 
+  DONE- add This question has been deleted or Does not exist.
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Additional features (if time permits):
 - toggle a typing animation for demo user using https://github.com/mattboldt/typed.js/
+- ui scrolling feature, loads more questions as you scroll down

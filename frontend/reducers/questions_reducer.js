@@ -1,7 +1,9 @@
 import {
   RECEIVE_ALL_QUESTIONS,
   RECEIVE_QUESTION,
-  REMOVE_QUESTION } from '../actions/question_actions';
+  REMOVE_QUESTION
+} from '../actions/question_actions';
+import { RECEIVE_ALL_TOPICS } from '../actions/topic_actions';
 import merge from 'lodash/merge';
 
 export default function( state = {}, action ) {

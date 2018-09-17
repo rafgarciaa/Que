@@ -24,7 +24,12 @@ class Api::QuestionsController < ApplicationController
 
   def destroy
     @question = Question.find(params[:id])
-    @question.destroy
+    if @question.destroy
+      render json: {}
+    else
+      render json: {}, status: 404
+    end
+      # redirect_to api_question_url
   end
 
   private
