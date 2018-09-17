@@ -14,6 +14,7 @@ export default class TopicIndex extends React.Component {
     return (
       <ul className='topic-index-container'>
       <div className='topic-index-header'>Feeds</div>
+        <div className='topic-item-link-top-stories'>Top Stories</div>
         {
           this.props.topics.map( (topic, idx) => {
             return <TopicIndexItem key={ idx }

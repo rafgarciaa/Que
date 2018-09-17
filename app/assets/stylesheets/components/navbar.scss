@@ -22,7 +22,8 @@
   text-decoration: none;
 
   .icon-name {
-    font-size: 14px;
+    font-size: 16px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 500;
     line-height: 50px;
   }
@@ -38,11 +39,6 @@
   .header-logo {
     margin-top: 10px;
     color: #c40d26;
-  }
-
-  h3 {
-    font-family: 'Libre Baskerville', serif;
-    margin-top: 20px;
   }
 
   input {
@@ -67,6 +63,9 @@
 
   .nav-item-link {
     color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 50px;
   }
 }
 
