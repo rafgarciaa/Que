@@ -4,7 +4,7 @@ class Api::QuestionsController < ApplicationController
     @question.author_id = current_user.id
     # for testing purposes only!!
     # topic_id will come from the frontend drop down menu selected by the user
-    @question.topic_id = Topic.first
+    @question.topic_id = Topic.first.id
 
     if @question.save
       render :show # render index page and append question to it (?)
