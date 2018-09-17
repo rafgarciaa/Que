@@ -39,15 +39,6 @@
     cursor: pointer;
   }
 
-  .asker-name {
-    margin-left: 5px;
-  }
-
-  .asker-name:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-
   .avatar:hover {
     cursor: pointer;
   }
@@ -66,6 +57,16 @@
     // margin-top: 20px;
     border: 1px solid rgb(226, 226, 226);
   }
+}
+
+.asker-name {
+  margin-left: 5px;
+  color: #949494;
+}
+
+.asker-name:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .question-form-footer {
@@ -101,6 +102,7 @@
 }
 
 .question-index-container {
+  padding: 0;
   margin: 100px 0 10px 0;
   width: 600px;
   font-size: 15px;
@@ -109,10 +111,38 @@
   background: #fff;
 }
 
-.quetion-item-box {
+.question-modal-container {
+  border: 1px solid #efefef;
+  background-color: #fff;
+  border-radius: 4px;
+  border-bottom: 1px solid #e2e2e2;
+  margin-bottom: 8px;
+  padding: 16px;
+  padding-top: 16px;
+
+  .question-modal-link {
+    text-decoration: none;
+    font-family: 'q_serif',Georgia,Times,"Times New Roman",
+    "Hiragino Kaku Gothic Pro","Meiryo",serif;
+    font-weight: bold;
+    line-height: 1.3;
+    font-size: 18px;
+    color: #949494;
+    display: block;
+    margin-top: 10px;
+  }
+
+  .question-modal-link:hover {
+    color: #2B6DAD;
+    cursor: pointer;
+  }
+}
+
+.question-item-box {
   border: 1px solid #efefef;
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 1px 1px 0 #f7f7f7;
   padding: 16px 18px;
+  margin-bottom: 8px;
 }

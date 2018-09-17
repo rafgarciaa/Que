@@ -1,4 +1,5 @@
 import React from 'react';
+import QuestionModal from './question_modal';
 import QuestionIndexItem from './question_index_item';
 
 export default class QuestionIndex extends React.Component {
@@ -13,8 +14,9 @@ export default class QuestionIndex extends React.Component {
   render() {
     return (
       <ul className='question-index-container'>
+        <QuestionModal currentUser={ this.props.currentUser } />
         {
-          this.props.questions.map( (question, idx) => {
+          this.props.questions.reverse().map( (question, idx) => {
             return <QuestionIndexItem
               key={ idx }
               question={ question }

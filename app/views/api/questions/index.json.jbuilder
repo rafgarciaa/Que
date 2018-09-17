@@ -1,5 +1,5 @@
 @questions.each do |question|
   json.set! question.id do
-    json.extract! question, :body, :topic_id, :created_at
+    json.partial! "/api/questions/question", question: question
   end
 end

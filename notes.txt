@@ -85,7 +85,25 @@ Today's learning:
 Questions:
   + Cannot read property 'body' of undefined when I ask a new question
   + how do I create a new page altogether but still have the navbar there
-  +
+
+- add topics table migration
+- add topic model validation & question association
+
+Bug encountered:
+  - added a partial for questions view and tried creating a question but
+  server was throwing error saying topic must exist after creating topics table
+
+- add topic api util
+- add topic actions
+- add topics reducer
+- add question modal to prompt modal
+
+Bug encountered:
+  - in my questions reducer, return merge({}, state, {[action.question.id]: action.questions}); instead of `action.question`
+
+Learning:
+  - there is a reverse function from the Array prototype similar to ruby,
+  that reverses the order of elements in an array
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Additional features (if time permits):

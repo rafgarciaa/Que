@@ -5,7 +5,7 @@ class Question < ApplicationRecord
     foreign_key: :author_id,
     class_name: 'User'
 
-  # belongs_to :topic,
-  #   foreign_key: :topic_id,
-  #   class_name: 'Topic'
+  belongs_to :topic,
+    foreign_key: :topic_id,
+    class_name: 'Topic'
 end

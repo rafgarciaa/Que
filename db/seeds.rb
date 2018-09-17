@@ -8,12 +8,18 @@
 
 User.destroy_all
 Question.destroy_all
+Topic.destroy_all
 
 demo_user = User.create!({
   first_name: 'Demo',
   last_name: 'User',
   email: 'demo_user@email.com',
   password: 'starwars'})
+
+
+topic1 = Topic.create!({ name: 'General' })
+topic2 = Topic.create!({ name: 'Programming' })
+topic3 = Topic.create!({ name: 'Random' })
 
 question1 = Question.create!({
   body: 'What is the meaning of life?',

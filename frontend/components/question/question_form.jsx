@@ -15,6 +15,7 @@ export default class QuestionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createQuestion(this.state);
+    this.props.toggleModal();
   }
 
   update(field) {

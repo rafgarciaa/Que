@@ -9,7 +9,8 @@ import { selectAllQuestions } from '../../reducers/selectors';
 
 const msp = (state, ownProps) => {
   return {
-    questions: selectAllQuestions(state)
+    currentUser: state.entities.users[state.session.id],
+    questions: selectAllQuestions(state),
   };
 };
 
