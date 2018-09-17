@@ -16,7 +16,6 @@ demo_user = User.create!({
   email: 'demo_user@email.com',
   password: 'starwars'})
 
-
 topic1 = Topic.create!({ name: 'General' })
 topic2 = Topic.create!({ name: 'Programming' })
 topic3 = Topic.create!({ name: 'Random' })
@@ -24,17 +23,17 @@ topic3 = Topic.create!({ name: 'Random' })
 question1 = Question.create!({
   body: 'What is the meaning of life?',
   author_id: demo_user.id,
-  topic_id: 1,
+  topic_id: topic1.id,
   })
 
 question2 = Question.create!({
   body: 'Who is sennacy?',
   author_id: demo_user.id,
-  topic_id: 1,
+  topic_id: topic3.id,
   })
 
 question3 = Question.create!({
   body: 'What constitutes great code?',
   author_id: demo_user.id,
-  topic_id: 1,
+  topic_id: topic2.id,
   })

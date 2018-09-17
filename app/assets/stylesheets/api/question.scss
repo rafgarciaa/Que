@@ -18,9 +18,9 @@
 .question-modal-form {
   color: #949494;
   position: relative;
-  margin-left: 620px;
-  margin-bottom: 585px;
+  margin: 0 auto;
   width: 620px;
+  height: 800px;
 }
 
 .question-form {
@@ -77,6 +77,7 @@
 
   .cancel-question {
     margin-top: 20px;
+    margin-left: 10px;
   }
 
   .cancel-question:hover {
@@ -145,4 +146,35 @@
   box-shadow: 1px 1px 0 #f7f7f7;
   padding: 16px 18px;
   margin-bottom: 8px;
+
+  span {
+    font-size: 20px;
+    float: right;
+    color: #666;
+    height: 24px;
+    width: 20px;
+    text-align: center;
+  }
+
+  span:hover {
+    background-color: #fafafa;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .question-item-header {
+    color: #949494;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-right: 4px;
+  }
+
+  .question-item-body {
+    margin-top: 4px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }

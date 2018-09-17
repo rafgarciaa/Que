@@ -8,7 +8,7 @@ export default class QuestionForm extends React.Component {
     this.state = {
       body: '',
       author_id: this.props.currentUser.id,
-      topic_id: 1
+      topic_id: 7
     };
   }
 
@@ -16,6 +16,9 @@ export default class QuestionForm extends React.Component {
     e.preventDefault();
     this.props.createQuestion(this.state);
     this.props.toggleModal();
+    // this.setState({
+    //   topic_id: value from drop
+    // });
   }
 
   update(field) {
@@ -52,6 +55,9 @@ export default class QuestionForm extends React.Component {
           <div className='border-line'></div>
         </form>
         <div className='question-form-footer'>
+          <select className='topic-downdown'>
+            <option value='1'>General</option>
+          </select>
           <a onClick={ () => this.props.toggleModal() }
             className='cancel-question'>Cancel</a>
           <button onClick={ this.handleSubmit }

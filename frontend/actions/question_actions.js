@@ -4,10 +4,11 @@ export const REMOVE_QUESTION = 'REMOVE_QUESTION';
 export const RECEIVE_QUES_ERRORS = 'RECEIVE_QUES_ERRORS';
 import * as QuestionApiUtil from '../util/question_api_util';
 
-const receiveQuestions = questions => {
+const receiveQuestions = ({ questions, users }) => {
   return {
     type: RECEIVE_ALL_QUESTIONS,
-    questions
+    questions,
+    users
   };
 };
 
@@ -34,8 +35,8 @@ const receiveQuesErrors = errors => {
 
 export const fetchQuestions = () => {
   return dispatch => {
-    return QuestionApiUtil.fetchQuestions().then( questions => {
-      return dispatch(receiveQuestions(questions));
+    return QuestionApiUtil.fetchQuestions().then( payload => {
+      return dispatch(receiveQuestions(payload));
     });
   };
 };
@@ -67,8 +68,11 @@ export const createQuestion = question => {
 
 export const deleteQuestion = id => {
   return dispatch => {
-    return QuestionApiUtil.deleteQuestion(id).then( question => {
-      return dispatch(removeQuestion(question.id));
+    // debugger
+    return QuestionApiUtil.deleteQuestion(id).then( () => {
+      // debugger
+      return dispatch(removeQuestion(id));
+      // console.log('successfully deleted');
     });
   };
 };

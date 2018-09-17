@@ -20,6 +20,10 @@ export default class QuestionIndex extends React.Component {
             return <QuestionIndexItem
               key={ idx }
               question={ question }
+              users={ this.props.users }
+              topics={ this.props.topics }
+              currentUser={ this.props.currentUser }
+              deleteQuestion={ this.props.deleteQuestion }
               />;
           })
         }

@@ -4,7 +4,7 @@ class Api::QuestionsController < ApplicationController
     @question.author_id = current_user.id
     # for testing purposes only!!
     # topic_id will come from the frontend drop down menu selected by the user
-    @question.topic_id = 1
+    @question.topic_id = 7
 
     if @question.save
       render :show # render index page and append question to it (?)
@@ -15,6 +15,7 @@ class Api::QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+    @users = User.all
   end
 
   def show

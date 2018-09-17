@@ -6,11 +6,19 @@ export default class LogInForm extends React.Component {
 
     this.state = this.props.form;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogIn = this.demoLogIn.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state);
+  }
+
+  demoLogIn() {
+    this.props.processForm({
+      email: 'demo_user@email.com',
+      password: 'starwars'
+    });
   }
 
   update(field) {
@@ -35,7 +43,6 @@ export default class LogInForm extends React.Component {
   }
 
   render() {
-    const demoUser = {email: 'demo_user@email.com', password: 'starwars'};
     return (
       <div className='login-form-box'>
         <label className='session-label'>Login</label>
@@ -53,7 +60,7 @@ export default class LogInForm extends React.Component {
 
           <button className='login-button'>Login</button><br/>
           <button
-            onClick={ () => this.props.processForm(demoUser) }
+            onClick={ () => this.demoLogIn() }
             className='demo-user-button'>
             Demo
           </button>
