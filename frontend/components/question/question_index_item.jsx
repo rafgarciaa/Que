@@ -23,9 +23,14 @@ class QuestionIndexItem extends React.Component {
     || { first_name: '', last_name: '' };
     const askerName = author.first_name + ' ' + author.last_name;
 
-    const topic = this.props.topics[this.props.question.topic_id]
-    || { topic: '' };
-    const topicName = topic.name;
+    let topicName;
+    if (this.props.topic !== undefined) {
+      topicName = this.props.topic.name;
+    } else {
+      let topic = this.props.topics[this.props.question.topic_id]
+      || { topic: '' };
+      topicName = topic.name;
+    }
 
     let avatar;
     if (currentUserName === askerName) {

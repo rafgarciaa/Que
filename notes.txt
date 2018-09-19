@@ -136,6 +136,8 @@ tries to render a question that does not exist // has been deleted.
 - add my sites on right hand side of homepage & add styling
 - add topics view page
 
+9 / 19 / 2018 LOG #9: (WEDNESDAY)
+
 To do:
   - edit question button & logic denying users to edit other user's
   questions

@@ -10,7 +10,7 @@ const SitesIndex = () => {
 
       <div className='sites-index-list'>
         <li>
-          <a href='#/index'><i class="fab fa-twitter"></i>Twitter</a>
+          <a href='#/index'><i className="fab fa-twitter"></i>Twitter</a>
         </li>
 
         <li>
