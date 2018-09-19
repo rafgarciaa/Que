@@ -8,7 +8,6 @@ export default class Navbar extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleDropDown = this.toggleDropDown.bind(this);
-    this.toggleActive = this.toggleActive.bind(this);
     this.state = {
       showDropDown: false,
       activeLink: false
@@ -22,15 +21,6 @@ export default class Navbar extends React.Component {
       $('.logout-dropdown').removeClass('logout-dropdown-show');
     }
     this.setState({ showDropDown: !this.state.showDropDown });
-  }
-
-  toggleActive() {
-    if (this.state.activeLink === false) {
-      $('.header-item').addClass('header-item-active');
-    } else {
-      $('.header-item').removeClass('header-item-active');
-    }
-    this.setState({ activeLink: !this.state.activeLink });
   }
 
   handleSubmit(e) { // logout

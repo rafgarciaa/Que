@@ -13,23 +13,27 @@
     font-size: 15px;
     letter-spacing: 0;
   }
-
-  .topic-item-link-top-stories {
-    background-color: #e6e6e6;
-  }
 }
 
-.topic-item-link, .topic-item-link-top-stories {
+.topic-item-link {
   border-radius: 3px;
-  // text-decoration: none;
   padding: 6px 5px;
   margin: 0 0 4px -5px;
-  a {
-    font-weight: 400;
-    color: #6f6f6f;
-    font-weight: 400;
-    text-decoration: none;
-  }
+}
+
+.link-item {
+  font-weight: 400;
+  color: #6f6f6f;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.link-item:hover {
+  color: #2b6dad;
+}
+
+.topic-item-active {
+  background: #e6e6e6;
 }
 
 .topic-item-link:hover {
