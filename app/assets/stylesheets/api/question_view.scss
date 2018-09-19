@@ -50,16 +50,18 @@
 
     .question-delete-button {
       float: right;
+      margin: 10px 10px 0 0;
     }
 
     .buttons {
       display: flex;
       justify-content: space-between;
+      background: #ffffff;
     }
   }
 
   .answer-button {
-    margin: 5px 0;
+    margin: 5px 5px;
     padding: 5px 5px 5px 10px;
     color: #666;
     font-size: 14px;

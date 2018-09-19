@@ -163,6 +163,15 @@
       text-align: center;
       margin-right: 5px;
     }
+
+    a {
+      color: #949494;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
   .question-item-body {
@@ -198,6 +207,7 @@
   height: 24px;
   width: 20px;
   text-align: center;
+  margin: 5px 5px 0 0;
 }
 
 .question-delete-button:hover {
@@ -210,6 +220,7 @@
   // align-items: center;
   display: flex;
   justify-content: space-between;
+  background: #ffffff;
 
   .upvote-button {
     margin: 5px 0;

@@ -51,7 +51,8 @@ class QuestionIndexItem extends React.Component {
 
           <a className='question-asker'>
             { askerName }
-          </a> asked · <a className='question-topic-link'>{ topicName }</a>
+          </a> asked · <Link to={`/topics/${this.props.question.topic_id}`}
+          className='question-topic-link'>{ topicName }</Link>
         </div>
 
         <div className='question-item-body'>
