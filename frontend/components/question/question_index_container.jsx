@@ -6,7 +6,8 @@ import {
   createQuestion,
   deleteQuestion,
 } from '../../actions/question_actions';
-import { selectAllQuestions } from '../../reducers/selectors';
+import { fetchAnswers } from '../../actions/answer_actions';
+import { selectAllQuestions, selectAllAnswers } from '../../reducers/selectors';
 
 const msp = (state, ownProps) => {
   return {
@@ -14,6 +15,7 @@ const msp = (state, ownProps) => {
     topics: state.entities.topics,
     currentUser: state.entities.users[state.session.id],
     questions: selectAllQuestions(state),
+    answers: selectAllAnswers(state),
   };
 };
 
@@ -23,6 +25,7 @@ const mdp = dispatch => {
     fetchQuestion: id => dispatch(fetchQuestion(id)),
     createQuestion: question => dispatch(createQuestion(question)),
     deleteQuestion: id => dispatch(deleteQuestion(id)),
+    fetchAnswers: () => dispatch(fetchAnswers()),
   };
 };
 

@@ -9,6 +9,7 @@ export default class QuestionIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchQuestions();
+    this.props.fetchAnswers();
   }
 
   render() {
@@ -22,6 +23,7 @@ export default class QuestionIndex extends React.Component {
               question={ question }
               users={ this.props.users }
               topics={ this.props.topics }
+              answers={ this.props.answers }
               currentUser={ this.props.currentUser }
               deleteQuestion={ this.props.deleteQuestion }
               />;

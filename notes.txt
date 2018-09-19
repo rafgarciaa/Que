@@ -146,6 +146,8 @@ DONE - add edit question form container
 DONE - edit question modal for question view
 DONE - add sites index and topic index on topic view page
 
+DONE - add answers slice of entities from backend to frond end
+
 To do:
   - only add a comment box in each question that has already been answered
   - add answer box that pops up when you click a question

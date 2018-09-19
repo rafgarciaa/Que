@@ -2,7 +2,7 @@ import React from 'react';
 import Avatar from 'react-avatar';
 import { Link } from 'react-router-dom';
 
-class QuestionIndexItem extends React.Component {
+export default class QuestionIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.deleteQuestionItem = this.deleteQuestionItem.bind(this);
@@ -87,5 +87,3 @@ class QuestionIndexItem extends React.Component {
     );
   }
 }
-
-export default QuestionIndexItem;

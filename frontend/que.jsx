@@ -10,6 +10,9 @@ import { fetchQuestions,
   createQuestion,
   deleteQuestion
 } from './actions/question_actions';
+
+import { fetchAnswers } from './actions/answer_actions';
+
 import { selectAllQuestions } from './reducers/selectors';
 // for testing only end
 
@@ -37,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createQuestion = createQuestion;
   window.deleteQuestion = deleteQuestion;
   window.selectAllQuestions = selectAllQuestions;
+  window.fetchAnswers = fetchAnswers;
 // for testing only end
 
   const root = document.getElementById('root');

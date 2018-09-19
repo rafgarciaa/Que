@@ -15,8 +15,6 @@ export default class QuestionForm extends React.Component {
 
   componentDidMount() {
     this.props.fetchTopics();
-    // debugger
-    // this.setState({ topic_id: Object.values(this.props.topics)[0].id });
   }
 
   handleSubmit(e) {
