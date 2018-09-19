@@ -29,11 +29,10 @@ class Api::QuestionsController < ApplicationController
     else
       render json: {}, status: 404
     end
-      # redirect_to api_question_url
   end
 
   def update
-    @question = Question.find(params[:question][:id].to_i)
+    @question = Question.find(params[:id])
 
     if @question.update(question_params)
       render :show
