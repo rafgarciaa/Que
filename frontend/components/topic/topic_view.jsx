@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import QuestionIndexItem from '../question/question_index_item';
+import TopicIndexContainer from './topic_index_container';
+import SitesIndex from '../site/sites_index';
 
 export default class TopicView extends React.Component {
   constructor(props) {
@@ -40,25 +42,31 @@ export default class TopicView extends React.Component {
     }
 
     return (
-      <div className='topic-view-container'>
-        <div className='topic-view-header'>
-          <Link to={`#/topics/${topicId}`}>
-            <span className='topic-name'>{ topic.name }</span>
-          </Link>
+      <div className='homepage-items-container'>
+        <TopicIndexContainer />
 
-          <div className='topic-view-footer'>
-            <span><NavLink to={`#/topics/${topicId}`}
-              activeClassName='active-nav'>Read</NavLink>
-            </span>
-            <span><NavLink to={`#/topics/${topicId}`}
-              activeClassName='active-nav'>Answer</NavLink>
-            </span>
+        <div className='topic-view-container'>
+          <div className='topic-view-header'>
+            <Link to={`#/topics/${topicId}`}>
+              <span className='topic-name'>{ topic.name }</span>
+            </Link>
+
+            <div className='topic-view-footer'>
+              <span><NavLink to={`#/topics/${topicId}`}
+                activeClassName='active-nav'>Read</NavLink>
+              </span>
+              <span><NavLink to={`#/topics/${topicId}`}
+                activeClassName='active-nav'>Answer</NavLink>
+              </span>
+            </div>
+          </div>
+
+          <div className='question-index-container'>
+            { topicQuestions }
           </div>
         </div>
 
-        <div className='question-index-container'>
-          { topicQuestions }
-        </div>
+        <SitesIndex />
       </div>
     );
   }

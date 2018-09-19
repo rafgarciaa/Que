@@ -32,6 +32,16 @@ class Api::QuestionsController < ApplicationController
       # redirect_to api_question_url
   end
 
+  def update
+    @question = Question.find(params[:question][:id].to_i)
+
+    if @question.update(question_params)
+      render :show
+    else
+      render json: @question.errors.full_messages, status: 422
+    end
+  end
+
   private
   def question_params
     params.require(:question).permit(:body, :author_id, :topic_id)

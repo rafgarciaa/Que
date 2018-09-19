@@ -138,15 +138,20 @@ tries to render a question that does not exist // has been deleted.
 
 9 / 19 / 2018 LOG #9: (WEDNESDAY)
 DONE - add topics view page (render all question with that topic_id)
-
+DONE - removed dropdown for edit button on question index page
+DONE ^ Users can only edit their question on the questions view page
+DONE - add logic denying users to edit other user's questions
+DONE - add edit question form
+DONE - add edit question form container
+DONE - edit question modal for question view
+DONE - add sites index and topic index on topic view page
 
 To do:
-  - edit question button & logic denying users to edit other user's
-  questions
   - only add a comment box in each question that has already been answered
   - add answer box that pops up when you click a question
   - add an /answer page where it loads all the questions not answered
   - answer editor component that toggles only when answer button is clicked
+  - feeds section to toggle which feed is active
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Additional features (if time permits):

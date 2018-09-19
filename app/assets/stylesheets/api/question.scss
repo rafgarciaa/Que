@@ -31,7 +31,13 @@
   .modal-close {
     color: #949494;
     font-size: 20px;
-    float: right;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 15px;
+    padding-right: 20px;
   }
 
   .modal-close:hover {
@@ -76,8 +82,7 @@
   border-top: 1px solid #e2e2e2;
 
   .cancel-question {
-    margin-top: 20px;
-    margin-left: 10px;
+    float: right;
   }
 
   .cancel-question:hover {
@@ -99,6 +104,7 @@
     font-size: 15px;
     box-sizing: border-box;
     border-radius: 3px;
+    float: right;
   }
 }
 

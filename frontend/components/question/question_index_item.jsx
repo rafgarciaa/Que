@@ -70,10 +70,6 @@ class QuestionIndexItem extends React.Component {
             <div className='downvote-button'>
               <i className="fas fa-arrow-down"></i>
             </div>
-
-            <div className='edit-button'>
-              <i className="fas fa-ellipsis-h"></i>
-            </div>
           </div>
         </div>
 

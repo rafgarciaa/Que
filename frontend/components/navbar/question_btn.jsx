@@ -24,7 +24,7 @@ class QuestionButton extends React.Component {
           className='question-modal-overlay'
           isOpen={ this.state.showModal }
           contentLabel='Add Question Modal'
-          ariaHideApp={false}>
+          ariaHideApp={ false }>
 
           <QuestionFormContainer toggleModal={ this.toggleModal } />
         </Modal>

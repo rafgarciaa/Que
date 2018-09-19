@@ -57,20 +57,18 @@ export const createQuestion = question => {
   };
 };
 
-// additional feature later
-// export const updateQuestion = question => {
-//   return dispatch => {
-//     return QuestionApiUtil.updateQuestion(question).then( quesFromServer => {
-//       return dispatch(receiveQuestion(quesFromServer));
-//     });
-//   };
-// };
+export const updateQuestion = question => {
+  return dispatch => {
+    return QuestionApiUtil.updateQuestion(question).then( quesFromServer => {
+      return dispatch(receiveQuestion(quesFromServer));
+    });
+  };
+};
 
 export const deleteQuestion = id => {
   return dispatch => {
     return QuestionApiUtil.deleteQuestion(id).then( () => {
       return dispatch(removeQuestion(id));
-      // console.log('successfully deleted');
     });
   };
 };

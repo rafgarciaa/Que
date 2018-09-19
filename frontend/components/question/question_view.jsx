@@ -2,14 +2,18 @@ import React from 'react';
 import Avatar from 'react-avatar';
 import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
+import QuestionFormContainer from './question_form_container';
+import EditQuestionFormContainer from './edit_question_form_container';
 
 export default class QuestionView extends React.Component {
   constructor(props) {
     super(props);
     this.deleteQuestionItem = this.deleteQuestionItem.bind(this);
     this.toggleDropDown = this.toggleDropDown.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
     this.state = {
       showDropDown: false,
+      showModal: false,
     };
   }
 
@@ -21,7 +25,7 @@ export default class QuestionView extends React.Component {
     if (this.props.currentUser.id === this.props.question.author_id) {
       this.props.deleteQuestion(this.props.question.id);
     } else {
-      return alert("Can't delete a question you did not ask!");
+      return alert("You can't delete a question you did not ask!");
     }
   }
 
@@ -32,6 +36,17 @@ export default class QuestionView extends React.Component {
       $('.edit-dropdown').removeClass('edit-dropdown-show');
     }
     this.setState({ showDropDown: !this.state.showDropDown });
+  }
+
+  toggleModal() {
+    if (this.props.question.author_id !== this.props.currentUser.id) {
+      return alert("You can't edit a question you did not ask!");
+    } else {
+      this.toggleDropDown();
+      this.setState({
+        showModal: !this.state.showModal,
+      });
+    }
   }
 
   render() {
@@ -70,9 +85,21 @@ export default class QuestionView extends React.Component {
                 onClick={ this.toggleDropDown }>
                 <i className="fas fa-ellipsis-h"></i>
               </div>
-              <div className='edit-dropdown'>
+              <div className='edit-dropdown'
+                onClick={ this.toggleModal }>
                 Edit
               </div>
+
+              <Modal
+                className='question-modal-overlay'
+                isOpen={ this.state.showModal }
+                contentLabel='Edit Question Modal'
+                ariaHideApp={ false }>
+
+                <EditQuestionFormContainer
+                  toggleModal={ this.toggleModal }
+                  question={ this.props.question }/>
+              </Modal>
             </div>
 
             </div>

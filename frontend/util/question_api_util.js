@@ -23,15 +23,15 @@ export const createQuestion = question => {
 };
 
 // additional feature later
-// export const updateQuestion = question => {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: `api/questions/${question.id}`,
-//     data: {
-//       question
-//     }
-//   });
-// };
+export const updateQuestion = question => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `api/questions/${question.id}`,
+    data: {
+      question
+    }
+  });
+};
 
 export const deleteQuestion = id => {
   return $.ajax({

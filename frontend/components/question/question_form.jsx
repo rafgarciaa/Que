@@ -38,7 +38,7 @@ export default class QuestionForm extends React.Component {
     this.props.currentUser.last_name;
     return (
       <div className='question-modal-form'>
-        <form className='question-form'>
+        <form className='question-form' onSubmit={ this.handleSubmit }>
           <span onClick={ () => this.props.toggleModal() }
             className='modal-close'>&times;</span>
 
@@ -72,10 +72,10 @@ export default class QuestionForm extends React.Component {
             }
           </select>
 
-          <a onClick={ () => this.props.toggleModal() }
-            className='cancel-question'>Cancel</a>
           <button onClick={ this.handleSubmit }
             className='add-question-button'>Add Question</button>
+          <a onClick={ () => this.props.toggleModal() }
+            className='cancel-question'>Cancel</a>
         </div>
       </div>
     );
