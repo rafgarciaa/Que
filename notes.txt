@@ -137,11 +137,12 @@ tries to render a question that does not exist // has been deleted.
 - add topics view page
 
 9 / 19 / 2018 LOG #9: (WEDNESDAY)
+DONE - add topics view page (render all question with that topic_id)
+
 
 To do:
   - edit question button & logic denying users to edit other user's
   questions
-  - add topics view page (render all question with that topic_id)
   - only add a comment box in each question that has already been answered
   - add answer box that pops up when you click a question
   - add an /answer page where it loads all the questions not answered
