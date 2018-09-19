@@ -131,7 +131,8 @@ Question:
 - add comment box in each question item @ /index page
   + for now just add a comment box for each question regardless if it's
   answered or not since answers slice of entities still doesn't exist
-- add This question has been deleted or Does not exist.
+- add 'This question has been deleted or does not exist.' When a user
+tries to render a question that does not exist // has been deleted.
 - add my sites on right hand side of homepage & add styling
 - add topics view page
 
@@ -142,6 +143,7 @@ To do:
   - only add a comment box in each question that has already been answered
   - add answer box that pops up when you click a question
   - add an /answer page where it loads all the questions not answered
+  - answer editor component that toggles only when answer button is clicked
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Additional features (if time permits):
