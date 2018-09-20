@@ -9,7 +9,7 @@ export default class AnswerIndex extends React.Component {
     return (
       <ul className='answer-index-container'>
         <div className='answer-header-container'>
-          <i class="far fa-star"></i>
+          <i className="far fa-star"></i>
           Questions for You
         </div>
       </ul>

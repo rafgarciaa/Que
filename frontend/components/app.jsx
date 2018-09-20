@@ -6,6 +6,7 @@ import Homepage from './homepage';
 import NavbarContainer from './navbar/navbar_container';
 import QuestionViewContainer from './question/question_view_container';
 import TopicViewContainer from './topic/topic_view_container';
+import Answerpage from './answerpage';
 
 const App = () => (
   <div>
@@ -13,7 +14,7 @@ const App = () => (
     <ProtectedRoute path='/' component={NavbarContainer} />
 
     <Switch>
-      <ProtectedRoute path='/answer' component={NavbarContainer} />
+      <ProtectedRoute path='/answer' component={Answerpage} />
       <ProtectedRoute path='/questions/:questionId'
         component={QuestionViewContainer} />
       <ProtectedRoute path='/topics/:topicId' component={TopicViewContainer} />
