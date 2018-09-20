@@ -1,6 +1,7 @@
 import React from 'react';
 import Avatar from 'react-avatar';
 import { Link } from 'react-router-dom';
+import Answer from '../answer/answer';
 
 export default class QuestionIndexItem extends React.Component {
   constructor(props) {
@@ -60,6 +61,10 @@ export default class QuestionIndexItem extends React.Component {
             { this.props.question.body }
           </Link>
         </div>
+
+        <Answer
+          answerIds={ this.props.question.answerIds }
+          answers={ this.props.answers }/>
 
         <div className='buttons'>
           <div className='upvote-button'>
