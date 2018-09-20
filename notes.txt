@@ -149,11 +149,11 @@ DONE - add sites index and topic index on topic view page
 DONE - add answers slice of entities from backend to frond end
 
 9 / 20 / 2018 LOG #10: (THURSDAY)
-2 commits
-
+3 commits
 2. Add answer index item component
-4. Add answer index item component
-5. Fix site to render answered questioned on /answer
+Render all unanswered questions on /answer page
+
+5. Fix site to render answered questions on /answer
 6. Add answer editor to pop-up on question view page
 7. Append answers to question on question view page
 8. Append answer to question index page

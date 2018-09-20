@@ -8,4 +8,8 @@ class Question < ApplicationRecord
   belongs_to :topic,
     foreign_key: :topic_id,
     class_name: 'Topic'
+
+  has_many :answers,
+    foreign_key: :question_id,
+    class_name: 'Answer'
 end
