@@ -148,6 +148,18 @@ DONE - add sites index and topic index on topic view page
 
 DONE - add answers slice of entities from backend to frond end
 
+9 / 20 / 2018 LOG #10: (THURSDAY)
+1. Add answer index component
+2. Add answer index item component
+3. Add answer index container
+4. Add answer index item component
+5. Fix site to render answered questioned on /answer
+6. Add answer editor to pop-up on question view page
+7. Append answers to question on question view page
+8. Append answer to question index page
+9. Add answer editor on each question item
+DONE - 10. Add answerpage component to render
+
 To do:
   - only add a comment box in each question that has already been answered
   - add answer box that pops up when you click a question
