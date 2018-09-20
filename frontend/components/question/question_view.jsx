@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
 import QuestionFormContainer from './question_form_container';
 import EditQuestionFormContainer from './edit_question_form_container';
+import Answer from '../answer/answer';
 
 export default class QuestionView extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ export default class QuestionView extends React.Component {
 
   componentDidMount() {
     this.props.fetchQuestion(this.props.match.params.questionId);
+    this.props.fetchAnswers();
   }
 
   deleteQuestionItem() {
@@ -103,6 +105,11 @@ export default class QuestionView extends React.Component {
             </div>
 
             </div>
+
+            <Answer
+              answerIds={ this.props.question.answerIds }
+              answers={ this.props.answers }/>
+
           </div>
 
           <div className='user-prompt-container'>
