@@ -63,6 +63,7 @@ export default class QuestionIndexItem extends React.Component {
         </div>
 
         <Answer
+          users={ this.props.users }
           answerIds={ this.props.question.answerIds }
           answers={ this.props.answers }/>
 

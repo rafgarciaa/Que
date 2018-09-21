@@ -15,10 +15,14 @@ const Answer = props => {
     }
   }
 
+  // debugger
+  let name;
   return questionAnswers.map( (answer, idx) => {
+    name = props.users[answer.user_id].first_name;
+
     return (
       <div key={ idx } className='question-answer-item'>
-        · { answer.body }
+        { name } says · { answer.body }
       </div>
     );
   });
