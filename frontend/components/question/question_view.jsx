@@ -144,12 +144,11 @@ export default class QuestionView extends React.Component {
             </div>
 
             </div>
-
-            { answers }
-
           </div>
 
           { userPrompt }
+
+          { answers }
 
           <AnswerEditor
             question={ this.props.question }

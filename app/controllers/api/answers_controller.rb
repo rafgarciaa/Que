@@ -1,6 +1,12 @@
 class Api::AnswersController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
+
+    if @answer.save
+      render :show
+    else
+      render json: @question.errors.full_messages, status: 422
+    end
   end
 
   def show

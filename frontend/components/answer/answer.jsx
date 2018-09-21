@@ -18,7 +18,7 @@ const Answer = props => {
   return questionAnswers.map( (answer, idx) => {
     return (
       <div key={ idx } className='question-answer-item'>
-        { answer.body }
+        · { answer.body }
       </div>
     );
   });

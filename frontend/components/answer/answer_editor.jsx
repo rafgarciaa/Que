@@ -26,13 +26,13 @@ class AnswerEditor extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const answer = {
-      body: this.state.editorHtml,
+      body: this.state.editorHtml.replace(/<\/?[^>]+(>|$)/g, ""),
       question_id: this.props.question.id,
       user_id: this.props.currentUser.id
     };
 
-    this.props.createAnswer(answer);
     this.props.toggleEditor();
+    this.props.createAnswer(answer);
   }
 
   render() {
@@ -57,7 +57,7 @@ class AnswerEditor extends React.Component {
         </div>
         <div className='answer-editor-footer'>
           <button className='answer-button'
-            onChange={ this.handleSubmit }>
+            onClick={ this.handleSubmit }>
             Submit
           </button>
         </div>
