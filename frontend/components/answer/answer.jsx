@@ -8,21 +8,16 @@ const Answer = props => {
 
       props.answers.map( answer => {
         if (answer.id === answerId) {
-          // debugger
           questionAnswers.push(answer);
         }
       });
     }
   }
 
-  // debugger
-  let name;
   return questionAnswers.map( (answer, idx) => {
-    name = props.users[answer.user_id].first_name;
-
     return (
       <div key={ idx } className='question-answer-item'>
-        { name } says · { answer.body }
+        · { answer.body }
       </div>
     );
   });

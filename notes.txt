@@ -121,14 +121,14 @@ Question:
   SOLVED + how can I pass the topic id from the dropdown menu
   SOLVED + how can I make my navbar persist in every page I visit
   NOT YET SOLVED + when I go to route '/' it doesn't render anything
-    - how do I make my path '/' always redirect to /index,
+    - how do I make my path '/' always redirect to /,
     if and only if logged in
   SOLVED + how do I make the data persist
 
 
 9 / 18 / 2018 LOG #8: (TUESDAY)
 - add logic denying users deleting other users' questions
-- add comment box in each question item @ /index page
+- add comment box in each question item @ / page
   + for now just add a comment box for each question regardless if it's
   answered or not since answers slice of entities still doesn't exist
 - add 'This question has been deleted or does not exist.' When a user
@@ -153,7 +153,7 @@ DONE - add answers slice of entities from backend to frond end
 - add answer index container, answer index, answer index item components
 - fix /answer page to render all the necessary components
 - fix styling on /answer page and answer components
-- render answers corresponding to each question on /index page
+- render answers corresponding to each question on / page
 - render question answers on question view page
 
 6. Add answer editor to pop-up on question view page
@@ -165,6 +165,12 @@ To do:
   - add an /answer page where it loads all the questions not answered
   - answer editor component that toggles only when answer button is clicked
   - feeds section to toggle which feed is active
+
+9 / 21 / 2018 LOG #11: (FRIDAY)
+- add react quill and fix styling
+- render new answer on question view page
+- fix bugs login demo user
+- position of items inside /answer so it does not overlap navbar
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Additional features (if time permits):

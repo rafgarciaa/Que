@@ -59,12 +59,12 @@ export default class LogInForm extends React.Component {
             onChange={this.update('password')}></input><br/>
 
           <button className='login-button'>Login</button><br/>
-          <button
-            onClick={ () => this.demoLogIn() }
-            className='demo-user-button'>
-            Demo
-          </button>
         </form>
+        <button
+          onClick={ () => this.demoLogIn() }
+          className='demo-user-button'>
+          Demo
+        </button>
         <div className='login-errors-list'>
           { this.renderErrors() }
         </div>

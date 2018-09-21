@@ -5,7 +5,6 @@ export default class QuestionForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // debugger
     this.state = {
       body: '',
       author_id: this.props.currentUser.id,
