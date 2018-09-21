@@ -149,13 +149,15 @@ DONE - add sites index and topic index on topic view page
 DONE - add answers slice of entities from backend to frond end
 
 9 / 20 / 2018 LOG #10: (THURSDAY)
-6 commits
+7 commits
+- add answer index container, answer index, answer index item components
+- fix /answer page to render all the necessary components
+- fix styling on /answer page and answer components
+- render answers corresponding to each question on /index page
+- render question answers on question view page
 
 6. Add answer editor to pop-up on question view page
-7. Append answers to question on question view page
-8. Append answer to question index page
 9. Add answer editor on each question item
-DONE - 10. Add answerpage component to render
 
 To do:
   - only add a comment box in each question that has already been answered
@@ -166,6 +168,9 @@ To do:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Additional features (if time permits):
+- upvotes & downvotes
+- comments
+
 - add OAuth for sign-up form (gmail account)
 - add search bar integration for searching questions
 - toggle a typing animation for demo user using https://github.com/mattboldt/typed.js/

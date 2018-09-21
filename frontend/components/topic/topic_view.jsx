@@ -20,18 +20,17 @@ export default class TopicView extends React.Component {
   render() {
     const topic = this.props.topic || {name: ''};
     const topicId = this.props.match.params.topicId;
-    // debugger
 
     let topicQuestions;
     if (this.props.questions.length > 0) {
       topicQuestions = this.props.questions.reverse().map( (question, idx) => {
-        // debugger
         if (question.topic_id === parseInt(topicId)) {
           return <QuestionIndexItem
             key={ idx }
             question={ question }
             users={ this.props.users }
             topic={ this.props.topic }
+            answers={ this.props.answers }
             currentUser={ this.props.currentUser }
             deleteQuestion={ this.props.deleteQuestion }
             />;

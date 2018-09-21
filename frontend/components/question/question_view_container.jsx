@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchQuestion, deleteQuestion } from '../../actions/question_actions';
-import { fetchAnswers } from '../../actions/answer_actions';
+import { fetchAnswers, createAnswer } from '../../actions/answer_actions';
 import QuestionView from './question_view';
 import { selectAllAnswers } from '../../reducers/selectors';
 
@@ -17,6 +17,7 @@ const mdp = dispatch => {
     fetchQuestion: id => dispatch(fetchQuestion(id)),
     fetchAnswers: () => dispatch(fetchAnswers()),
     deleteQuestion: id => dispatch(deleteQuestion(id)),
+    createAnswer: answer => dispatch(createAnswer(answer)),
   };
 };
 

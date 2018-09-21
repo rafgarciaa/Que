@@ -80,3 +80,66 @@
 .question-answer-item {
   padding: 10px 0 10px 5px;
 }
+
+.answer-editor-container {
+  display: none;
+  stroke: #e2e2e2;
+  background-color: white;
+  box-sizing: border-box;
+  transition: border-color .2s ease-in-out 0s;
+  width: 600px;
+  margin: 15px auto;
+
+  .answer-editor-header {
+    height: 24px;
+    background: #f6f6f6;
+    margin: 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-right: 0;
+    border-bottom: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+
+  .answer-editor-footer {
+    background: #f6f6f6;
+    margin: 0;
+    padding: 8px 8px 32px 8px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+
+  .answer-button {
+    display: inline-block;
+    font-weight: 500;
+    outline: 0;
+    padding: 3px 7px 4px 7px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background: #3e78ad;
+    color: #fff;
+    border: 1px solid #3a66ad;
+    box-shadow: 0 1px 1px 0 rgba(200,200,200,0.6);
+    box-sizing: border-box;
+    transition: opacity ease-in-out 100ms,color ease-in-out 100ms,background-color ease-in-out 100ms,border-color ease-in-out 100ms;
+    border-radius: 3px;
+    float: left;
+  }
+}
+
+.ql-toolbar.ql-snow {
+  border-top: 0;
+  border-right: 0;
+}
+
+.ql-editor {
+  min-height: 100px;
+}
+
+.answer-editor-show {
+  display: block;
+}

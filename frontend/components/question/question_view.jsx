@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import QuestionFormContainer from './question_form_container';
 import EditQuestionFormContainer from './edit_question_form_container';
 import Answer from '../answer/answer';
+import AnswerEditor from '../answer/answer_editor';
 
 export default class QuestionView extends React.Component {
   constructor(props) {
@@ -12,9 +13,11 @@ export default class QuestionView extends React.Component {
     this.deleteQuestionItem = this.deleteQuestionItem.bind(this);
     this.toggleDropDown = this.toggleDropDown.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
+    this.toggleEditor = this.toggleEditor.bind(this);
     this.state = {
       showDropDown: false,
       showModal: false,
+      showEditor: false,
     };
   }
 
@@ -51,6 +54,17 @@ export default class QuestionView extends React.Component {
     }
   }
 
+  toggleEditor() {
+    if (this.state.showEditor === false) {
+      $('.answer-editor-container').addClass('answer-editor-show');
+      $('.user-prompt-container').addClass('user-prompt-hide');
+    } else {
+      $('.answer-editor-container').removeClass('answer-editor-show');
+      $('.user-prompt-container').removeClass('user-prompt-hide');
+    }
+    this.setState({ showEditor: !this.state.showEditor });
+  }
+
   render() {
     const question = this.props.question || {body: ''};
     const currentUserName = this.props.currentUser.first_name + ' ' +
@@ -67,6 +81,31 @@ export default class QuestionView extends React.Component {
         </div>
       );
     } else {
+
+      let answers, userPrompt;
+      if (this.props.question.answerIds.length > 0) {
+        answers = <Answer
+          answerIds={ this.props.question.answerIds }
+          answers={ this.props.answers }/>;
+      } else {
+        userPrompt =
+          <div className='user-prompt-container'>
+            <Avatar className='avatar'
+              name={currentUserName} round={true} color='#619ad1'
+              size='50' textSizeRatio={1.5} />
+            <div className='user-prompt-1'>
+              {this.props.currentUser.first_name}, can you answer this question?
+            </div>
+
+            <div className='user-prompt-2'>
+              People are searching for a better answer to this question.
+            </div>
+            <div>
+              <button onClick={ this.toggleEditor }>Answer</button>
+            </div>
+          </div>;
+      }
+
       return (
         <div>
           <div className='question-item-container'>
@@ -77,7 +116,7 @@ export default class QuestionView extends React.Component {
             </div>
 
             <div className='buttons'>
-              <div className='answer-button'>
+              <div className='answer-button' onClick={ this.toggleEditor }>
                 <i className="far fa-edit"></i>
                 Answer
               </div>
@@ -106,27 +145,16 @@ export default class QuestionView extends React.Component {
 
             </div>
 
-            <Answer
-              answerIds={ this.props.question.answerIds }
-              answers={ this.props.answers }/>
+            { answers }
 
           </div>
 
-          <div className='user-prompt-container'>
-            <Avatar className='avatar'
-              name={currentUserName} round={true} color='#619ad1'
-              size='50' textSizeRatio={1.5} />
-            <div className='user-prompt-1'>
-              {this.props.currentUser.first_name}, can you answer this question?
-            </div>
+          { userPrompt }
 
-            <div className='user-prompt-2'>
-              People are searching for a better answer to this question.
-            </div>
-            <div>
-              <button>Answer</button>
-            </div>
-          </div>
+          <AnswerEditor
+            question={ this.props.question }
+            currentUser={ this.props.currentUser }
+            toggleEditor={ this.toggleEditor }/>
         </div>
       );
     }
