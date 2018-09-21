@@ -14,11 +14,11 @@ const SitesIndex = () => {
         </li>
 
         <li>
-          <a href='#/index'><i className="fab fa-github"></i>Github</a>
+          <a href='https://github.com/rafgarciaa/'><i className="fab fa-github"></i>Github</a>
         </li>
 
         <li>
-          <a href='#/index'><i className="fab fa-linkedin"></i>LinkedIn</a>
+          <a href='https://www.linkedin.com/in/raf-garcia-engr/'><i className="fab fa-linkedin"></i>LinkedIn</a>
         </li>
       </div>
     </ul>

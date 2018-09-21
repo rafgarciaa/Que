@@ -149,15 +149,19 @@ DONE - add sites index and topic index on topic view page
 DONE - add answers slice of entities from backend to frond end
 
 9 / 20 / 2018 LOG #10: (THURSDAY)
-7 commits
 - add answer index container, answer index, answer index item components
 - fix /answer page to render all the necessary components
 - fix styling on /answer page and answer components
 - render answers corresponding to each question on / page
 - render question answers on question view page
+- add answer editor to pop-up on question view page
+- add answer editor on each question item
 
-6. Add answer editor to pop-up on question view page
-9. Add answer editor on each question item
+9 / 21 / 2018 LOG #11: (FRIDAY)
+- add react quill and fix styling
+- render new answer on question view page
+- fix bugs login demo user
+- position of items inside /answer so it does not overlap navbar
 
 To do:
   - only add a comment box in each question that has already been answered
@@ -166,11 +170,9 @@ To do:
   - answer editor component that toggles only when answer button is clicked
   - feeds section to toggle which feed is active
 
-9 / 21 / 2018 LOG #11: (FRIDAY)
-- add react quill and fix styling
-- render new answer on question view page
-- fix bugs login demo user
-- position of items inside /answer so it does not overlap navbar
+Bug encountered:
+- deleting questions with answer(s) breaks in the backend, need to delete
+  answers that belongs to that question
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Additional features (if time permits):

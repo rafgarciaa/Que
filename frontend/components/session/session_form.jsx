@@ -66,12 +66,12 @@ export default class SessionForm extends React.Component {
           <div className='footer-nav'>
             Que? by Rafael Garcia, inspired by Quora.
             Check me out on
-          <a className='footer-link' href='#'>
+          <a className='footer-link' href='https://github.com/rafgarciaa/'>
             <i className="fab fa-github"></i>
             Github
           </a>
            &
-          <a className='footer-link' href='#'>
+          <a className='footer-link' href='https://www.linkedin.com/in/raf-garcia-engr/'>
             <i className="fab fa-linkedin"></i>
             LinkedIn
           </a>
