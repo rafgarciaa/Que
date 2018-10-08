@@ -173,6 +173,8 @@ To do:
 Bug encountered:
 - deleting questions with answer(s) breaks in the backend, need to delete
   answers that belongs to that question
+  SOLVED:
+  - dependent: destroy on answers association on questions
 
 Limitations (as it stands):
 - comments & upvotes are not working yet
@@ -187,3 +189,25 @@ Additional features (if time permits):
 - add search bar integration for searching questions
 - toggle a typing animation for demo user using https://github.com/mattboldt/typed.js/
 - ui scrolling feature, loads more questions as you scroll down
+
+
+TO-DOs: (https://github.com/appacademy/ny-portfolio-curriculum/blob/master/resources/full-stack-project-checklist.md)
+- Prevent submission of blank question body
+  - limit character count to 250 charaters
+  - Render errors for blank question title
+
+- Don't render delete button for question(s) that the current user did not ask
+  - add logic to do this
+
+- Implement upvote/down votes
+  - backend to frontend
+
+- Implement Comments
+  - backend to frontend
+
+- Remove redux logger
+  - remove from argument in store
+
+- remove functions made available in console for testing
+
+- Production ReadMe
