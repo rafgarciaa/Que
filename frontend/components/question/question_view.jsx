@@ -66,6 +66,7 @@ export default class QuestionView extends React.Component {
   }
 
   render() {
+    debugger
     const question = this.props.question || {body: ''};
     const currentUserName = this.props.currentUser.first_name + ' ' +
     this.props.currentUser.last_name;
@@ -106,6 +107,8 @@ export default class QuestionView extends React.Component {
           </div>;
       }
 
+      let answerCount = this.props.question.answerIds.length;
+
       return (
         <div>
           <div className='question-item-container'>
@@ -144,16 +147,22 @@ export default class QuestionView extends React.Component {
             </div>
 
             </div>
+
+              <div className='answer-count'>
+                { answerCount } { answerCount > 1 ? " Answers" : " Answer"}
+              </div>
+
           </div>
-
-          { userPrompt }
-
-          { answers }
 
           <AnswerEditor
             question={ this.props.question }
             currentUser={ this.props.currentUser }
             toggleEditor={ this.toggleEditor }/>
+
+          { userPrompt }
+
+          { answers }
+
         </div>
       );
     }
