@@ -33,19 +33,23 @@ export default class QuestionIndexItem extends React.Component {
       topicName = topic.name;
     }
 
-    let avatar;
+    // differentiate color of current user from other users
+    let avatar, close;
     if (currentUserName === askerName) {
       avatar = <Avatar className='avatar' name={askerName} round={true}
         color='#619ad1' size='30' textSizeRatio={1.5} />;
+      close = <span onClick={ this.deleteQuestionItem }
+        className='question-delete-button'>&times;</span>;
     } else {
       avatar = <Avatar className='avatar' name={askerName} round={true}
         size='30' textSizeRatio={1.5} />;
+      close = null;
     }
+    
 
     return (
       <div className='question-item-box'>
-        <span onClick={ this.deleteQuestionItem }
-          className='question-delete-button'>&times;</span>
+        { close }
         <div className='question-item-header'>
 
           { avatar }
