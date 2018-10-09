@@ -66,7 +66,6 @@ export default class QuestionView extends React.Component {
   }
 
   render() {
-    debugger
     const question = this.props.question || {body: ''};
     const currentUserName = this.props.currentUser.first_name + ' ' +
     this.props.currentUser.last_name;
