@@ -12,8 +12,6 @@ export default class QuestionIndexItem extends React.Component {
   deleteQuestionItem() {
     if (this.props.currentUser.id === this.props.question.author_id) {
       this.props.deleteQuestion(this.props.question.id);
-    } else {
-      return alert("Can't delete a question you did not ask!");
     }
   }
 
@@ -34,22 +32,23 @@ export default class QuestionIndexItem extends React.Component {
     }
 
     // differentiate color of current user from other users
-    let avatar, close;
+    // specify if delete button should/should not exist
+    let avatar, deleteButton;
     if (currentUserName === askerName) {
       avatar = <Avatar className='avatar' name={askerName} round={true}
         color='#619ad1' size='30' textSizeRatio={1.5} />;
-      close = <span onClick={ this.deleteQuestionItem }
+      deleteButton = <span onClick={ this.deleteQuestionItem }
         className='question-delete-button'>&times;</span>;
     } else {
       avatar = <Avatar className='avatar' name={askerName} round={true}
         size='30' textSizeRatio={1.5} />;
-      close = null;
+      deleteButton = null;
     }
-    
+
 
     return (
       <div className='question-item-box'>
-        { close }
+        { deleteButton }
         <div className='question-item-header'>
 
           { avatar }

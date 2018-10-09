@@ -66,9 +66,18 @@ export default class QuestionView extends React.Component {
   }
 
   render() {
-    const question = this.props.question || {body: ''};
+    const question = this.props.question || {body: '', author_id: 0};
     const currentUserName = this.props.currentUser.first_name + ' ' +
     this.props.currentUser.last_name;
+
+    let deleteButton;
+    if (this.props.currentUser.id === question.author_id) {
+      deleteButton = <span onClick={ this.deleteQuestionItem }
+        className='question-delete-button'>&times;</span>;
+    } else {
+      deleteButton = null;
+    }
+
 
     if (!this.props.question) {
       return (
@@ -111,8 +120,7 @@ export default class QuestionView extends React.Component {
       return (
         <div>
           <div className='question-item-container'>
-            <span onClick={ this.deleteQuestionItem }
-              className='question-delete-button'>&times;</span>
+            { deleteButton }
             <div className='question-item-body'>
               { question.body }
             </div>
