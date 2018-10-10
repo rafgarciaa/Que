@@ -14,12 +14,11 @@ class Api::QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.all
-    @users = User.all
+    @questions = Question.includes(:author, :topic, :answers).all
   end
 
   def show
-    @question = Question.find(params[:id])
+    @question = Question.includes(:answers).find(params[:id])
   end
 
   def destroy

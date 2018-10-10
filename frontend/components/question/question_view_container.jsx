@@ -9,6 +9,7 @@ const msp = (state, ownProps) => {
     question: state.entities.questions[ownProps.match.params.questionId],
     answers: selectAllAnswers(state),
     currentUser: state.entities.users[state.session.id],
+    users: state.entities.users,
   };
 };
 

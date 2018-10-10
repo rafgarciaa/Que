@@ -10,7 +10,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def show
-    @answer = Answer.find(params[:id])
+    @answer = Answer.includes(:user).find(params[:id])
   end
 
   def destroy

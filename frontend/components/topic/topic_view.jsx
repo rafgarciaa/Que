@@ -14,7 +14,6 @@ export default class TopicView extends React.Component {
 
   componentDidMount() {
     this.props.fetchTopic(this.props.match.params.topicId);
-    this.props.fetchQuestions();
   }
 
   render() {

@@ -116,6 +116,14 @@ export default class QuestionView extends React.Component {
       }
 
       let answerCount = this.props.question.answerIds.length;
+      let numAns;
+      if (answerCount === 0) {
+        numAns = `No answer yet`;
+      } else if (answerCount === 1){
+        numAns = `${answerCount} Answer`;
+      } else {
+        numAns = `${answerCount} Answers`;
+      }
 
       return (
         <div>
@@ -156,7 +164,7 @@ export default class QuestionView extends React.Component {
             </div>
 
               <div className='answer-count'>
-                { answerCount } { answerCount > 1 ? " Answers" : " Answer"}
+                { numAns }
               </div>
 
           </div>

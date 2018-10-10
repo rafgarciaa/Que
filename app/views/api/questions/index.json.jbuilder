@@ -7,7 +7,8 @@ json.questions do
 end
 
 json.users do
-  @users.each do |user|
+  @questions.each do |question|
+    user = question.author
     json.set! user.id do
       json.extract! user, :id, :first_name, :last_name
     end
