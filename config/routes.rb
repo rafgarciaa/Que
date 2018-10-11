@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :questions
     resources :topics, only: [:show, :index]
     resources :answers, only: [:show, :create, :destroy, :index]
+    resources :comments, only: [:create, :show, :index, :destroy]
   end
 end
