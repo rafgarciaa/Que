@@ -6,7 +6,6 @@ import {
   createQuestion,
   deleteQuestion,
 } from '../../actions/question_actions';
-import { fetchAnswers } from '../../actions/answer_actions';
 import { selectAllQuestions, selectAllAnswers } from '../../reducers/selectors';
 
 const msp = (state, ownProps) => {
@@ -25,7 +24,6 @@ const mdp = dispatch => {
     fetchQuestion: id => dispatch(fetchQuestion(id)),
     createQuestion: question => dispatch(createQuestion(question)),
     deleteQuestion: id => dispatch(deleteQuestion(id)),
-    fetchAnswers: () => dispatch(fetchAnswers()),
   };
 };
 

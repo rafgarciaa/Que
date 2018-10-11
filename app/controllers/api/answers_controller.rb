@@ -19,7 +19,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def index
-    @answers = Answer.all
+    @answers = Answer.includes(:user).all
   end
 
   private
