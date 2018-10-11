@@ -95,7 +95,9 @@ export default class QuestionView extends React.Component {
       if (this.props.question.answerIds.length > 0) {
         answers = <Answer
           answerIds={ this.props.question.answerIds }
-          answers={ this.props.answers }/>;
+          answers={ this.props.answers }
+          users={ this.props.users }
+          currentUser={ this.props.currentUser }/>;
       } else {
         userPrompt =
           <div className='user-prompt-container'>
