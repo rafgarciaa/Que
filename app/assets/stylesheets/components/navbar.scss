@@ -8,120 +8,118 @@
   border-bottom: 1px solid #ddd;
   box-shadow: 0 3px 2px -2px rgba(200,200,200,0.2);
   position: fixed;
-  // z-index: 1;
   top: 0;
   left: 0;
-}
 
-.header a {
-  display: block;
-  padding: 5px 15px;
-  font-family: 'Libre Baskerville', serif;
-  font-weight: bolder;
-  font-size: 25px;
-  text-decoration: none;
-
-  .icon-name {
-    font-size: 16px;
+  .header-nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
     font-weight: 500;
-    line-height: 50px;
+
+    .header-logo {
+      font-family: 'Libre Baskerville', serif;
+      color: #c40d26;
+      font-weight: bolder;
+      font-size: 25px;
+      text-decoration: none;
+      padding: 10px 10px 10px 10px;
+    }
+
+    .nav-item-link {
+      padding: 0 10px;
+
+      i {
+        margin-top: 15px;
+        color: #666;
+      }
+
+      span {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+      }
+    }
+
+    .nav-item-link:hover {
+      background: rgb(246, 246, 246);
+    }
+
+    .nav-item-link.active-nav {
+      i {
+        color: #c40d26;
+      }
+
+      border-bottom: 2px solid #b92b27;
+    }
+
+    input {
+      background-image: image_url('search.png');
+      background-size: 13px;
+      border: 1px solid #e2e2e2;
+      border-radius: 4px;
+      padding-left: 26px;
+      background: url(//qsf.fs.quoracdn.net/-3-images.new_grid.QuoraSearch.png-26-86c32b1ac26e4161.png) no-repeat 8px center;
+      background-size: 13px;
+      margin: 10px 5px 0 10px;
+      width: 475px;
+      height: 25px;
+      font-size: 15px;
+      color: #333;
+      font-weight: lighter;
+    }
   }
-}
 
-.header-nav {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  width: 50%;
+  .avatar-dropdown {
+    margin: 10px 5px 0 5px;
 
-  .header-logo {
-    margin-top: 10px;
-    color: #c40d26;
+    .avatar:hover {
+      cursor: pointer;
+    }
   }
 
-  input {
-    background-image: image_url('search.png');
-    background-size: 13px;
-    border: 1px solid #e2e2e2;
-    border-radius: 4px;
-    padding-left: 26px;
-    background: url(//qsf.fs.quoracdn.net/-3-images.new_grid.QuoraSearch.png-26-86c32b1ac26e4161.png) no-repeat 8px center;
-    background-size: 13px;
-    margin-top: 15px;
-    width: 475px;
-    height: 25px;
+  .logout-dropdown {
+    display: none;
+    top: 50px;
+    position: absolute;
+    background: #f6f6f6;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(200,200,200,0.7);
+    padding: 8px 16px;
+    line-height: 1.25;
+    cursor: pointer;
+    color: #2b6dad;
+    width: 80px;
+    text-align: center;
+  }
+
+  .logout-dropdown:hover {
+    background-color: #dfeffa;
+  }
+
+  .logout-dropdown-show {
+    display: block;
+  }
+
+  .header-btn {
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px 0 rgba(200,200,200,0.2);
+    display: inline-block;
+    background: #b92b27;
+    color: #fff;
+    height: 30px;
+    width: 96px;
+    margin: 10px 0 0 5px;
+    font-weight: 500;
+    font-family: inherit;
     font-size: 15px;
-    color: #333;
-    font-weight: lighter;
   }
 
-  .header-item:hover {
-    background: rgb(246, 246, 246);
-  }
-
-  .nav-item-link {
-    color: #666;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 50px;
-  }
-}
-
-.nav-item-link.active-nav {
-  color: #c40d26;
-  border-bottom: 2px solid #b92b27;
-}
-
-.avatar-dropdown {
-  margin-top: 15px;
-
-  .avatar:hover {
+  .header-btn:hover {
     cursor: pointer;
   }
-}
-
-.logout-dropdown {
-  display: none;
-  top: 50px;
-  // right: 575px;
-  position: absolute;
-  background: #f6f6f6;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-shadow: 0 1px 3px rgba(200,200,200,0.7);
-  padding: 8px 16px;
-  line-height: 1.25;
-  cursor: pointer;
-  color: #2b6dad;
-  width: 80px;
-  text-align: center;
-}
-
-.logout-dropdown:hover {
-  background-color: #dfeffa;
-}
-
-.logout-dropdown-show {
-  display: block;
-}
-
-.header-btn {
-  box-sizing: border-box;
-  border-radius: 5px;
-  box-shadow: 0 1px 1px 0 rgba(200,200,200,0.2);
-  display: inline-block;
-  background: #b92b27;
-  color: #fff;
-  height: 30px;
-  width: 96px;
-  margin-top: 15px;
-  font-weight: 500;
-  font-family: inherit;
-  font-size: 15px;
-}
-
-.header-btn:hover {
-  cursor: pointer;
 }

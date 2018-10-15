@@ -252,7 +252,7 @@
     cursor: pointer;
   }
 
-  .buttons-left {
+  .buttons-right {
     margin-top: 5px;
 
     .edit-dropdown {
@@ -276,6 +276,22 @@
 
     .edit-dropdown-show {
       display: block;
+    }
+
+    .comment-button {
+      display: inline;
+      padding: 4px 10px 4px 10px;
+      margin: 9px 0;
+      color: #666;
+      font-size: 14px;
+      border-radius: 20px;
+      width: 6px;
+      margin-right: 5px;
+    }
+
+    .comment-button:hover {
+      background-color: #fafafa;
+      cursor: pointer;
     }
   }
 }

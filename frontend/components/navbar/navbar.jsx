@@ -37,19 +37,20 @@ export default class Navbar extends React.Component {
           <div className='header-nav'>
             <Link to='/index' className='header-logo'>Que?</Link>
 
-            <div className='header-item'>
               <NavLink to='/index' className='nav-item-link'
                 activeClassName='active-nav'>
-                <span className='icon-name'>Home</span>
-              </NavLink>
-            </div>
+                <i className="far fa-newspaper">
+                  <span className='icon-name'> Home</span>
+                </i>
 
-            <div className='header-item'>
+              </NavLink>
+
               <NavLink to='/answer' className='nav-item-link'
                 activeClassName='active-nav'>
-                <span className='icon-name'>Answer</span>
+                <i className="far fa-edit">
+                  <span className='icon-name'> Answer</span>
+                </i>
               </NavLink>
-            </div>
 
             <input type='text' placeholder='Search Que'></input>
 

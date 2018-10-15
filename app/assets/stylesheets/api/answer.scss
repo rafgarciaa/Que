@@ -81,9 +81,29 @@
 
 .question-answer-item {
   margin: 0 auto;
-  // text-align: center;
   width: 600px;
   padding: 10px 0 10px 5px;
+  font-family: 'q_serif',Georgia,Times,"Times New Roman","Hiragino Kaku Gothic Pro","Meiryo",serif;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e2e2;
+  margin-bottom: 8px;
+
+
+  .answerer-name {
+    font-size: 15px;
+    line-height: 1.2em;
+    margin-left: 5px;
+  }
+
+  .answer-item-body {
+    font-size: 16px;
+    line-height: 1.75;
+    margin: 10px 0 0 34px;
+  }
+
+  .buttons {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
 }
 
 .answer-editor-container {
@@ -147,24 +167,4 @@
 
 .answer-editor-show {
   display: block;
-}
-
-.question-answer-item {
-  font-family: 'q_serif',Georgia,Times,"Times New Roman","Hiragino Kaku Gothic Pro","Meiryo",serif;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e2e2e2;
-  margin-bottom: 8px;
-
-
-  .answerer-name {
-    font-size: 15px;
-    line-height: 1.2em;
-    margin-left: 5px;
-  }
-
-  .answer-item-body {
-    font-size: 16px;
-    line-height: 1.75;
-    margin: 10px 0 0 34px;
-  }
 }

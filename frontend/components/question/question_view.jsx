@@ -141,7 +141,7 @@ export default class QuestionView extends React.Component {
                 Answer
               </div>
 
-            <div className='buttons-left'>
+            <div className='buttons-right'>
               <div className='edit-button'
                 onClick={ this.toggleDropDown }>
                 <i className="fas fa-ellipsis-h"></i>

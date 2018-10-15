@@ -71,7 +71,7 @@ export default class QuestionIndexItem extends React.Component {
             UpVote · { Math.floor(Math.random() * 20) + 1 }
           </div>
 
-          <div className='buttons-left'>
+          <div className='buttons-right'>
             <div className='downvote-button'>
               <i className="fas fa-arrow-down"></i>
             </div>
