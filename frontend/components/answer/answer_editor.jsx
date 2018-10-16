@@ -6,8 +6,7 @@ import { createAnswer } from '../../actions/answer_actions';
 class AnswerEditor extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { editorHtml: '', theme: 'snow' };
-    this.handleChange = this.handleChange.bind(this);
+    this.state = this.props.answer;
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.modules = {
@@ -19,20 +18,15 @@ class AnswerEditor extends React.Component {
     this.formats = ['bold', 'italic'];
   }
 
-  handleChange(html) {
-    this.setState({ editorHtml: html });
+  updateBody(value) {
+    this.setState({ body: value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const answer = {
-      body: this.state.editorHtml.replace(/<\/?[^>]+(>|$)/g, ""),
-      question_id: this.props.question.id,
-      user_id: this.props.currentUser.id
-    };
 
     this.props.toggleEditor();
-    this.props.createAnswer(answer);
+    this.props.createAnswer(this.state);
   }
 
   render() {
@@ -47,9 +41,9 @@ class AnswerEditor extends React.Component {
         </div>
         <div className='answer-editor'>
           <ReactQuill
-            theme={this.state.theme}
-            onChange={this.handleChange}
-            value={this.state.editorHtml}
+            theme={'snow'}
+            onChange={this.updateBody.bind(this)}
+            value={this.state.body}
             modules={this.modules}
             formats={this.formats}
             placeholder="Write your answer"
@@ -66,9 +60,14 @@ class AnswerEditor extends React.Component {
   }
 }
 
-const msp = state => {
+const msp = (state, ownProps) => {
   return {
     currentUser: state.entities.users[state.session.id],
+    answer: {
+      body: '',
+      question_id: ownProps.question.id,
+      user_id: state.session.id
+    },
   };
 };
 

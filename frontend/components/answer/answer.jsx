@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
 import Avatar from 'react-avatar';
 import CommentFormContainer from '../comment/comment_form_container';
 
@@ -9,7 +10,6 @@ export default class Answer extends React.Component {
   }
 
   toggleCommentBox(id) {
-    debugger
     return () => {
       $(`.comment-box`).removeClass('comment-box-show');
 
@@ -61,7 +61,14 @@ export default class Answer extends React.Component {
           </a> answered
 
           <div className='answer-item-body'>
-            { answer.body }
+
+            <ReactQuill
+              readOnly
+              modules={{toolbar: null}}
+              value={answer.body}
+              theme={null}
+            />
+
           </div>
 
           <div className='buttons'>

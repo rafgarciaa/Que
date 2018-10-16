@@ -96,9 +96,13 @@
   }
 
   .answer-item-body {
-    font-size: 16px;
-    line-height: 1.75;
-    margin: 10px 0 0 34px;
+    margin: 10px 0 0 20px;
+
+    .ql-editor {
+      font-size: 16px;
+      line-height: 1.75;
+      font-family: 'q_serif',Georgia,Times,"Times New Roman","Hiragino Kaku Gothic Pro","Meiryo",serif;
+    }
   }
 
   .buttons {
@@ -154,15 +158,15 @@
     border-radius: 3px;
     float: left;
   }
-}
 
-.ql-toolbar.ql-snow {
-  border-top: 0;
-  border-right: 0;
-}
+  .ql-toolbar.ql-snow {
+    border-top: 0;
+    border-right: 0;
+  }
 
-.ql-editor {
-  min-height: 100px;
+  .ql-editor {
+    min-height: 100px;
+  }
 }
 
 .answer-editor-show {
