@@ -18,7 +18,7 @@ Asking questions is the main foundation of Que as they stimulate conversation an
 Upon successful log-in or sign-up, `QuestionIndexContainer` component is loaded and questions are loaded
 onto the applications state.
 
-![Homepage](https://github.com/rafgarciaa/Que/blob/master/app/assets/images/session_page.png)
+![Homepage](https://github.com/rafgarciaa/Que/blob/master/app/assets/images/homepage.png)
 
 Users are able to ask questions through clicking the `Add` button on the navigation bar, or
 through the `Add a question...` prompt below the navigation bar. Clicking either will open a
@@ -47,9 +47,9 @@ filter their view of questions that fall under specific topics.
 ---
 
 ## Technologies Used
-Database: PostgreSQL
-Backend: Ruby on Rails
-Frontend: React and Redux
++ Database: PostgreSQL
++ Backend: Ruby on Rails
++ Frontend: React and Redux
 
 ---
 
