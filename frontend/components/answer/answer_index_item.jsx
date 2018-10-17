@@ -33,7 +33,7 @@ export default class AnswerIndexItem extends React.Component {
             this.props.question.author_id
           )
         }
-        className='question-delete-button'>&times;</span>;
+        className='delete-button'>&times;</span>;
     } else {
       deleteButton = null;
     }

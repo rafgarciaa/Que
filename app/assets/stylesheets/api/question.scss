@@ -1,4 +1,4 @@
-.question-modal-overlay {
+.question-modal-overlay, .modal-overlay {
   background: rgba(0,0,0,0.65);
   position: fixed;
   overflow-y: scroll;
@@ -21,6 +21,53 @@
   margin: 0 auto;
   width: 620px;
   height: 800px;
+}
+
+.delete-modal-form {
+  color: #949494;
+  margin: 0 auto;
+  position: relative;
+  width: 460px;
+  height: 800px;
+
+  .delete-modal-body {
+    padding: 16px;
+    border-radius: 4px 4px 0 0;
+    background-color: #fff;
+
+    h4, p {
+      color: #333;
+      font-size: 13px;
+    }
+  }
+
+  .delete-modal-footer {
+    background: #fff;
+    border-radius: 0 0 4px 4px;
+    padding: 5px 15px 15px 5px;
+    text-align: right;
+
+    // border-top: 1px solid #e2e2e2;
+
+    button {
+      padding: 6px 8px;
+      margin-left: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      background: #3e78ad;
+      color: #fff;
+      border: 1px solid #3a66ad;
+      box-shadow: 0 1px 1px 0 rgba(200, 200, 200, 0.6);
+      font-weight: 500;
+      font-size: 15px;
+      box-sizing: border-box;
+      border-radius: 3px;
+    }
+
+    a:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .question-form {
@@ -200,7 +247,7 @@
   }
 }
 
-.question-delete-button {
+.delete-button {
   font-size: 20px;
   float: right;
   color: #666;
@@ -210,7 +257,7 @@
   margin: 0 5px 0 0;
 }
 
-.question-delete-button:hover {
+.delete-button:hover {
   background-color: #fafafa;
   cursor: pointer;
   border-radius: 50%;

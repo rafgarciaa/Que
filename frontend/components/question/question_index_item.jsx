@@ -1,18 +1,25 @@
 import React from 'react';
 import Avatar from 'react-avatar';
 import { Link } from 'react-router-dom';
-// import Answer from '../answer/answer';
+import Modal from 'react-modal';
+import DeleteModal from '../ui/delete_modal';
 
 export default class QuestionIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.deleteQuestionItem = this.deleteQuestionItem.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
+    this.state = { showModal: false };
   }
 
   deleteQuestionItem() {
     if (this.props.currentUser.id === this.props.question.author_id) {
       this.props.deleteQuestion(this.props.question.id);
     }
+  }
+
+  toggleModal() {
+    this.setState({ showModal: !this.state.showModal });
   }
 
   render() {
@@ -37,8 +44,8 @@ export default class QuestionIndexItem extends React.Component {
     if (currentUserName === askerName) {
       avatar = <Avatar className='avatar' name={askerName} round={true}
         color='#619ad1' size='30' textSizeRatio={1.5} />;
-      deleteButton = <span onClick={ this.deleteQuestionItem }
-        className='question-delete-button'>&times;</span>;
+      deleteButton = <span onClick={ this.toggleModal }
+        className='delete-button'>&times;</span>;
     } else {
       avatar = <Avatar className='avatar' name={askerName} round={true}
         size='30' textSizeRatio={1.5} />;
@@ -49,6 +56,20 @@ export default class QuestionIndexItem extends React.Component {
     return (
       <div className='question-item-box'>
         { deleteButton }
+
+        <Modal
+          className='modal-overlay'
+          isOpen={ this.state.showModal }
+          contentLabel='Delete Question Modal'
+          ariaHideApp={ false }>
+
+          <DeleteModal
+            type='question'
+            toggleModal={ this.toggleModal }
+            action={ this.deleteQuestionItem } />
+
+        </Modal>
+
         <div className='question-item-header'>
 
           { avatar }

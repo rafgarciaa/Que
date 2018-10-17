@@ -15,7 +15,7 @@ export default function( state = {}, action ) {
       return merge({}, state, {[action.answer.id]: action.answer});
     case REMOVE_ANSWER:
       const newState = merge({}, state);
-      delete newState[action.questionId];
+      delete newState[action.answerId];
       return newState;
     default:
       return state;

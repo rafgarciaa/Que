@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
 import QuestionFormContainer from './question_form_container';
 import EditQuestionFormContainer from './edit_question_form_container';
-import Answer from '../answer/answer';
+import AnswerContainer from '../answer/answer_container';
 import AnswerEditor from '../answer/answer_editor';
 
 export default class QuestionView extends React.Component {
@@ -48,9 +48,7 @@ export default class QuestionView extends React.Component {
       return alert("You can't edit a question you did not ask!");
     } else {
       this.toggleDropDown();
-      this.setState({
-        showModal: !this.state.showModal,
-      });
+      this.setState({ showModal: !this.state.showModal });
     }
   }
 
@@ -73,7 +71,7 @@ export default class QuestionView extends React.Component {
     let deleteButton;
     if (this.props.currentUser.id === question.author_id) {
       deleteButton = <span onClick={ this.deleteQuestionItem }
-        className='question-delete-button'>&times;</span>;
+        className='delete-button'>&times;</span>;
     } else {
       deleteButton = null;
     }
@@ -93,11 +91,10 @@ export default class QuestionView extends React.Component {
 
       let answers, userPrompt;
       if (this.props.question.answerIds.length > 0) {
-        answers = <Answer
+        answers = <AnswerContainer
           answerIds={ this.props.question.answerIds }
           answers={ this.props.answers }
-          users={ this.props.users }
-          currentUser={ this.props.currentUser }/>;
+          />;
       } else {
         userPrompt =
           <div className='user-prompt-container'>

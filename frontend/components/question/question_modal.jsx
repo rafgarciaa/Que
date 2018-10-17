@@ -7,9 +7,7 @@ export default class QuestionModal extends React.Component {
   constructor(props) {
     super(props);
     this.toggleModal = this.toggleModal.bind(this);
-    this.state = {
-      showModal: false
-    };
+    this.state = { showModal: false };
   }
 
   toggleModal() {

@@ -2,11 +2,14 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 import Avatar from 'react-avatar';
 import CommentFormContainer from '../comment/comment_form_container';
+import Modal from 'react-modal';
+import DeleteModal from '../ui/delete_modal';
 
 export default class Answer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { openCommentBox: 0 };
+    this.state = { openCommentBox: 0, showModal: false };
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   toggleCommentBox(id) {
@@ -24,6 +27,10 @@ export default class Answer extends React.Component {
     };
   }
 
+  toggleModal() {
+    this.setState({ showModal: !this.state.showModal });
+  }
+
   render() {
     const questionAnswers = [];
     if (this.props.answerIds.length > 0) {
@@ -38,7 +45,7 @@ export default class Answer extends React.Component {
       }
     }
 
-    let answerer, answererName, avatar, deletebutton;
+    let answerer, answererName, avatar, deleteButton, modal;
     const currentUserName = this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name;
     return questionAnswers.map( (answer, idx) => {
       answerer = this.props.users[answer.user_id];
@@ -47,12 +54,24 @@ export default class Answer extends React.Component {
       if (currentUserName === answererName) {
         avatar = <Avatar className='avatar' name={answererName} round={true}
           color='#619ad1' size='30' textSizeRatio={1.5} />;
-        deletebutton = <span
-          className='question-delete-button'>&times;</span>;
+        deleteButton = <span onClick={ this.toggleModal }
+          className='delete-button'>&times;</span>;
+        modal = <Modal
+          className='modal-overlay'
+          isOpen={ this.state.showModal }
+          contentLabel='Delete Question Modal'
+          ariaHideApp={ false }>
+
+          <DeleteModal
+            type='answer'
+            toggleModal={ this.toggleModal }
+            action={ () => this.props.deleteAnswer(answer.id) } />
+
+        </Modal>;
       } else {
         avatar = <Avatar className='avatar' name={answererName} round={true}
           size='30' textSizeRatio={1.5} />;
-        deletebutton = null;
+        deleteButton = null;
       }
 
       return (
@@ -62,6 +81,10 @@ export default class Answer extends React.Component {
           <a className='answerer-name'>
             { answererName }
           </a> answered
+
+          { deleteButton }
+
+          { modal }
 
           <div className='answer-item-body'>
 
