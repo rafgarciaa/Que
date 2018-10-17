@@ -45,5 +45,8 @@
   "bugs": {
     "url": "https://github.com/rafgarciaa/Que/issues"
   },
-  "homepage": "https://github.com/rafgarciaa/Que#readme"
+  "homepage": "https://github.com/rafgarciaa/Que#readme",
+  "devDependencies": {
+    "regenerator-runtime": "^0.12.1"
+  }
 }

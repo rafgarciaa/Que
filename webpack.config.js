@@ -1,7 +1,11 @@
 const path = require("path");
 
 module.exports = {
-  entry: path.join(__dirname, "frontend", "que.jsx"),
+  entry: [
+    'regenerator-runtime/runtime',
+    path.join(__dirname, "frontend", "que.jsx")
+  ],
+  
   output: {
     path: path.join(__dirname, "app", "assets", "javascripts"),
     filename: "bundle.js"

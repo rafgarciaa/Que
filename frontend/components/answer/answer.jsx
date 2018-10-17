@@ -48,6 +48,7 @@ export default class Answer extends React.Component {
     let answerer, answererName, avatar, deleteButton, modal;
     const currentUserName = this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name;
     return questionAnswers.map( (answer, idx) => {
+      debugger
       answerer = this.props.users[answer.user_id];
       answererName = answerer.first_name + ' ' + answerer.last_name;
 
@@ -65,7 +66,8 @@ export default class Answer extends React.Component {
           <DeleteModal
             type='answer'
             toggleModal={ this.toggleModal }
-            action={ () => this.props.deleteAnswer(answer.id) } />
+            deleteAction={ () => this.props.deleteAnswer(answer.id) }
+            fetchAction={ id => this.props.fetchQuestion(answer.question_id) }/>
 
         </Modal>;
       } else {

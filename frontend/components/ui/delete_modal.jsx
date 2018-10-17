@@ -5,35 +5,40 @@ import React from 'react';
 // toggleModal: function that toggles the modal for that specific component
 // action: dipsatch the delete action for either question, answer, comment, etc.
 
-const DeleteModal = props => {
+export default class DeleteModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleAction = this.handleAction.bind(this);
+  }
 
-  const _handleAction = () => {
-    props.toggleModal();
-    props.action();
-  };
+  async handleAction() {
+    await this.props.deleteAction();
+    this.props.toggleModal();
+    this.props.fetchAction();
+  }
 
-  return (
-    <div className='delete-modal-form'>
-      <div className='delete-modal-body'>
-        <h4>{ `Delete ${props.type}?` }</h4>
+  render() {
+    return (
+      <div className='delete-modal-form'>
+        <div className='delete-modal-body'>
+          <h4>{ `Delete ${this.props.type}?` }</h4>
 
-        <p>
-          {`Are you sure you would like to delete this ${props.type}?
-          This action cannot be undone.`}
-        </p>
+          <p>
+            {`Are you sure you would like to delete this ${this.props.type}?
+            This action cannot be undone.`}
+          </p>
+        </div>
+
+        <div className='delete-modal-footer'>
+          <a onClick={ () => this.props.toggleModal() } className='cancel-delete'>
+            Cancel
+          </a>
+
+          <button onClick={ () => this.handleAction() } className=''>
+            Delete
+          </button>
+        </div>
       </div>
-
-      <div className='delete-modal-footer'>
-        <a onClick={ () => props.toggleModal() } className='cancel-delete'>
-          Cancel
-        </a>
-
-        <button onClick={ () => _handleAction() } className=''>
-          Delete
-        </button>
-      </div>
-    </div>
-  );
-};
-
-export default DeleteModal;
+    );
+  }
+}
