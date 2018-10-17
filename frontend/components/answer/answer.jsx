@@ -38,7 +38,7 @@ export default class Answer extends React.Component {
       }
     }
 
-    let answerer, answererName, avatar;
+    let answerer, answererName, avatar, deletebutton;
     const currentUserName = this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name;
     return questionAnswers.map( (answer, idx) => {
       answerer = this.props.users[answer.user_id];
@@ -47,9 +47,12 @@ export default class Answer extends React.Component {
       if (currentUserName === answererName) {
         avatar = <Avatar className='avatar' name={answererName} round={true}
           color='#619ad1' size='30' textSizeRatio={1.5} />;
+        deletebutton = <span
+          className='question-delete-button'>&times;</span>;
       } else {
         avatar = <Avatar className='avatar' name={answererName} round={true}
           size='30' textSizeRatio={1.5} />;
+        deletebutton = null;
       }
 
       return (

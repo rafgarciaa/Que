@@ -34,7 +34,8 @@ class AnswerEditor extends React.Component {
     this.props.currentUser.last_name;
 
     return (
-      <div className='answer-editor-container'>
+      <div className={`answer-editor-container
+          answer-editor-container-${this.props.question.id}`}>
 
         <div className='answer-editor-header'>
           { currentUserName }

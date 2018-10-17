@@ -1,7 +1,7 @@
 .answer-index-container {
   padding: 0;
   margin: 100px 0 10px 0;
-  width: 600px;
+  width: 630px;
   font-size: 13px;
   color: #949494;
   word-wrap: break-word;
@@ -37,7 +37,7 @@
   padding: 16px;
   border-bottom: 1px solid #e2e2e2;
 
-  div {
+  .answer-item-header {
     margin-left: 10px;
   }
 
@@ -60,7 +60,7 @@
   }
 
   .answer-button {
-    margin-top: 5px;
+    // margin-top: 5px;
     margin-left: 0;
     padding: 5px 5px 5px 10px;
     color: #666;
@@ -70,7 +70,6 @@
   }
 
   .answer-button:hover {
-    background-color: #fafafa;
     cursor: pointer;
   }
 
