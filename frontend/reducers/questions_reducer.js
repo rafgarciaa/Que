@@ -33,7 +33,6 @@ export default function( state = {}, action ) {
       newState = merge({}, state);
       const a = Object.values(newState)[0].answerIds;
       a.splice([a.indexOf(action.answerId)], 1);
-      debugger
       return newState;
     default:
       return state;
