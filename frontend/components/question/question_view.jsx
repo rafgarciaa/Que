@@ -6,6 +6,7 @@ import QuestionFormContainer from './question_form_container';
 import EditQuestionFormContainer from './edit_question_form_container';
 import AnswerContainer from '../answer/answer_container';
 import AnswerEditor from '../answer/answer_editor';
+import DeleteModal from '../ui/delete_modal';
 
 export default class QuestionView extends React.Component {
   constructor(props) {
@@ -14,10 +15,12 @@ export default class QuestionView extends React.Component {
     this.toggleDropDown = this.toggleDropDown.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
     this.toggleEditor = this.toggleEditor.bind(this);
+    this.toggleDeleteModal = this.toggleDeleteModal.bind(this);
     this.state = {
       showDropDown: false,
-      showModal: false,
+      showEditModal: false,
       showEditor: false,
+      showDeleteModal: false,
     };
   }
 
@@ -48,8 +51,12 @@ export default class QuestionView extends React.Component {
       return alert("You can't edit a question you did not ask!");
     } else {
       this.toggleDropDown();
-      this.setState({ showModal: !this.state.showModal });
+      this.setState({ showEditModal: !this.state.showEditModal });
     }
+  }
+
+  toggleDeleteModal() {
+    this.setState({ showDeleteModal: !this.state.showDeleteModal });
   }
 
   toggleEditor() {
@@ -68,10 +75,22 @@ export default class QuestionView extends React.Component {
     const currentUserName = this.props.currentUser.first_name + ' ' +
     this.props.currentUser.last_name;
 
-    let deleteButton;
+    let deleteButton, deleteModal;
     if (this.props.currentUser.id === question.author_id) {
-      deleteButton = <span onClick={ this.deleteQuestionItem }
+      deleteButton = <span onClick={ this.toggleDeleteModal }
         className='delete-button'>&times;</span>;
+      deleteModal = <Modal
+        className='modal-overlay'
+        isOpen={ this.state.showDeleteModal }
+        contentLabel='Delete Question Modal'
+        ariaHideApp={ false }>
+
+        <DeleteModal
+          type='question'
+          toggleModal={ this.toggleDeleteModal }
+          deleteAction={ this.deleteQuestionItem } />
+
+      </Modal>;
     } else {
       deleteButton = null;
     }
@@ -128,6 +147,8 @@ export default class QuestionView extends React.Component {
         <div>
           <div className='question-item-container'>
             { deleteButton }
+
+            { deleteModal }
             <div className='question-item-body'>
               { question.body }
             </div>
@@ -150,7 +171,7 @@ export default class QuestionView extends React.Component {
 
               <Modal
                 className='question-modal-overlay'
-                isOpen={ this.state.showModal }
+                isOpen={ this.state.showEditModal }
                 contentLabel='Edit Question Modal'
                 ariaHideApp={ false }>
 

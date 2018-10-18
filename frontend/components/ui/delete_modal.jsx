@@ -11,10 +11,9 @@ export default class DeleteModal extends React.Component {
     this.handleAction = this.handleAction.bind(this);
   }
 
-  async handleAction() {
-    await this.props.deleteAction();
+  handleAction() {
+    this.props.deleteAction();
     this.props.toggleModal();
-    this.props.fetchAction();
   }
 
   render() {

@@ -35,7 +35,7 @@ export const fetchComments = () => {
 export const fetchComment = id => {
   return dispatch => {
     return CommentApiUtil.fetchComment(id).then( comment => {
-      return dispatch(receiveComments(comment));
+      return dispatch(receiveComment(comment));
     });
   };
 };
@@ -43,7 +43,7 @@ export const fetchComment = id => {
 export const createComment = comment => {
   return dispatch => {
     return CommentApiUtil.createComment(comment).then( commentFromServer => {
-      return dispatch(receiveComments(commentFromServer));
+      return dispatch(receiveComment(commentFromServer));
     });
   };
 };
@@ -51,7 +51,7 @@ export const createComment = comment => {
 export const deleteComment = id => {
   return dispatch => {
     return CommentApiUtil.deleteComment(id).then( () => {
-      return dispatch(receiveComments(id));
+      return dispatch(removeComment(id));
     });
   };
 };

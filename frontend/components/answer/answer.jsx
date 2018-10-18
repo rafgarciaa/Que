@@ -65,8 +65,7 @@ export default class Answer extends React.Component {
           <DeleteModal
             type='answer'
             toggleModal={ this.toggleModal }
-            deleteAction={ () => this.props.deleteAnswer(answer.id) }
-            fetchAction={ id => this.props.fetchQuestion(answer.question_id) }/>
+            deleteAction={ () => this.props.deleteAnswer(answer.id) } />
 
         </Modal>;
       } else {

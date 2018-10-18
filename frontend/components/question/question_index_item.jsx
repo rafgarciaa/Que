@@ -66,7 +66,7 @@ export default class QuestionIndexItem extends React.Component {
           <DeleteModal
             type='question'
             toggleModal={ this.toggleModal }
-            action={ this.deleteQuestionItem } />
+            deleteAction={ this.deleteQuestionItem } />
 
         </Modal>
 
