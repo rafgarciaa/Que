@@ -18,6 +18,14 @@ export default class CommentForm extends React.Component {
     this.props.createComment(this.state);
   }
 
+  update(field) {
+    return (e) => {
+      this.setState({
+        [field]: e.target.value
+      });
+    };
+  }
+
   render() {
     const name = this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name;
     return (
@@ -25,7 +33,17 @@ export default class CommentForm extends React.Component {
         Hi! This is where we render the comment box that toggles.
 
         <form className='comment-form' onSubmit={ this.handleSubmit }>
-
+          <Avatar className='avatar'
+            name={ name } round={true} color='#619ad1'
+            size='30' textSizeRatio={1.5} />
+          <input
+            className='comment-input-box'
+            type='text'
+            placeholder='Add a comment...'
+            value={ this.state.body }
+            onChange={ this.update('body') }
+            />
+          <button className='add-comment-button'>Comment</button>
         </form>
       </div>
     );
