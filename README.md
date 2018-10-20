@@ -44,6 +44,9 @@ filter their view of questions that fall under specific topics.
 
 ![Topic View](https://github.com/rafgarciaa/Que/blob/master/app/assets/images/topic_view.png)
 
+
+### Comments
+This feature is still under construction!
 ---
 
 ## Technologies Used
