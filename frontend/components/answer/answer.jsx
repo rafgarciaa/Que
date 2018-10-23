@@ -52,25 +52,13 @@ export default class Answer extends React.Component {
       answererName = answerer.first_name + ' ' + answerer.last_name;
 
       if (currentUserName === answererName) {
-        avatar = <Avatar className='avatar' name={answererName} round={true}
-          color='#619ad1' size='30' textSizeRatio={1.5} />;
-        deleteButton = <span onClick={ this.toggleModal }
-          className='delete-button'>&times;</span>;
-        modal = <Modal
-          className='modal-overlay'
-          isOpen={ this.state.showModal }
-          contentLabel='Delete Question Modal'
-          ariaHideApp={ false }>
-
-          <DeleteModal
-            type='answer'
-            toggleModal={ this.toggleModal }
-            deleteAction={ () => this.props.deleteAnswer(answer.id) } />
-
-        </Modal>;
+        avatar = <Avatar className='avatar' name={answererName} round={true} color='#619ad1' size='30' textSizeRatio={1.5} />;
+        deleteButton = <span onClick={ this.toggleModal } className='delete-button'>&times;</span>;
+        modal = <Modal className='modal-overlay' isOpen={ this.state.showModal } contentLabel='Delete Question Modal' ariaHideApp={ false }>
+                  <DeleteModal type='answer' toggleModal={ this.toggleModal } deleteAction={ () => this.props.deleteAnswer(answer.id) } />
+                </Modal>;
       } else {
-        avatar = <Avatar className='avatar' name={answererName} round={true}
-          size='30' textSizeRatio={1.5} />;
+        avatar = <Avatar className='avatar' name={answererName} round={true} size='30' textSizeRatio={1.5} />;
         deleteButton = null;
       }
 
@@ -83,24 +71,15 @@ export default class Answer extends React.Component {
           </a> answered
 
           { deleteButton }
-
           { modal }
 
           <div className='answer-item-body'>
-
-            <ReactQuill
-              readOnly
-              modules={{toolbar: null}}
-              value={answer.body}
-              theme={null}
-            />
-
+            <ReactQuill readOnly modules={{toolbar: null}} value={answer.body} theme={null} />
           </div>
 
           <div className='buttons'>
             <div className='upvote-button'>
-              <i className="fas fa-arrow-up"></i>
-              UpVote · { Math.floor(Math.random() * 20) + 1 }
+              <i className="fas fa-arrow-up"></i> UpVote · { Math.floor(Math.random() * 20) + 1 }
             </div>
 
             <div className='buttons-right'>
@@ -114,7 +93,7 @@ export default class Answer extends React.Component {
             </div>
           </div>
 
-          <div>
+          <div className={`comment-box comment-box-${answer.id}`}>
             <CommentFormContainer answerId={ answer.id }/>
           </div>
         </div>

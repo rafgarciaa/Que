@@ -10,7 +10,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def show
-    @answer = Answer.includes(:user).find(params[:id])
+    @answer = Answer.includes(:user, :comments).find(params[:id])
   end
 
   def destroy
@@ -19,7 +19,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def index
-    @answers = Answer.includes(:user).all
+    @answers = Answer.includes(:user, :comments).all
   end
 
   private

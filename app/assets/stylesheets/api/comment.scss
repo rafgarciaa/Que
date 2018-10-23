@@ -11,3 +11,31 @@
 .comment-box-show {
   display: block;
 }
+
+.comment-input-box {
+  font-family: 'q_serif',Georgia,Times,"Times New Roman", "Hiragino Kaku Gothic Pro","Meiryo",serif;
+  background-color: #fff;
+  border: 1px solid darkgray;
+  box-shadow: 1px 1px 1px 0 lightgrey inset;
+  margin-left: 8px;
+  padding: 3px 5px 4px;
+  width: 420px;
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.add-comment-button {
+  height: 22px;
+  font-weight: 500;
+  outline: 0;
+  padding: 3px 7px 4px 7px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background: #3e78ad;
+  color: #fff;
+  border: 1px solid #3a66ad;
+  box-shadow: 0 1px 1px 0 rgba(200, 200, 200, 0.6);
+  border-radius: 3px;
+  margin-left: 10px;
+}

@@ -23,18 +23,15 @@ export default class QuestionIndexItem extends React.Component {
   }
 
   render() {
-    const currentUserName = this.props.currentUser.first_name + ' '
-    + this.props.currentUser.last_name;
-    const author = this.props.users[this.props.question.author_id]
-    || { first_name: '', last_name: '' };
+    const currentUserName = this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name;
+    const author = this.props.users[this.props.question.author_id] || { first_name: '', last_name: '' };
     const askerName = author.first_name + ' ' + author.last_name;
 
     let topicName;
     if (this.props.topic !== undefined) {
       topicName = this.props.topic.name;
     } else {
-      let topic = this.props.topics[this.props.question.topic_id]
-      || { topic: '' };
+      let topic = this.props.topics[this.props.question.topic_id] || { topic: '' };
       topicName = topic.name;
     }
 
@@ -42,16 +39,12 @@ export default class QuestionIndexItem extends React.Component {
     // specify if delete button should/should not exist
     let avatar, deleteButton;
     if (currentUserName === askerName) {
-      avatar = <Avatar className='avatar' name={askerName} round={true}
-        color='#619ad1' size='30' textSizeRatio={1.5} />;
-      deleteButton = <span onClick={ this.toggleModal }
-        className='delete-button'>&times;</span>;
+      avatar = <Avatar className='avatar' name={askerName} round={true} color='#619ad1' size='30' textSizeRatio={1.5} />;
+      deleteButton = <span onClick={ this.toggleModal } className='delete-button'>&times;</span>;
     } else {
-      avatar = <Avatar className='avatar' name={askerName} round={true}
-        size='30' textSizeRatio={1.5} />;
+      avatar = <Avatar className='avatar' name={askerName} round={true} size='30' textSizeRatio={1.5} />;
       deleteButton = null;
     }
-
 
     return (
       <div className='question-item-box'>
@@ -62,18 +55,14 @@ export default class QuestionIndexItem extends React.Component {
           isOpen={ this.state.showModal }
           contentLabel='Delete Question Modal'
           ariaHideApp={ false }>
-
           <DeleteModal
             type='question'
             toggleModal={ this.toggleModal }
             deleteAction={ this.deleteQuestionItem } />
-
         </Modal>
 
         <div className='question-item-header'>
-
           { avatar }
-
           <a className='question-asker'>
             { askerName }
           </a> asked · <Link to={`/topics/${this.props.question.topic_id}`}
@@ -97,16 +86,6 @@ export default class QuestionIndexItem extends React.Component {
               <i className="fas fa-arrow-down"></i>
             </div>
           </div>
-        </div>
-
-        <div className='question-item-comment-box'>
-          <Avatar className='avatar'
-            name={currentUserName} round={true} color='#619ad1'
-            size='30' textSizeRatio={1.5} />
-          <div id='input' className='comment-box'
-            contentEditable='true'
-            data-text='Add a comment...'/>
-          <button className='add-comment-button'>Comment</button>
         </div>
       </div>
     );

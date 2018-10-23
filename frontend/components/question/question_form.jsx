@@ -31,48 +31,34 @@ export default class QuestionForm extends React.Component {
   }
 
   render() {
-    const name = this.props.currentUser.first_name + ' ' +
-    this.props.currentUser.last_name;
+    const name = this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name;
     return (
       <div className='question-modal-form'>
         <form className='question-form' onSubmit={ this.handleSubmit }>
-          <span onClick={ () => this.props.toggleModal() }
-            className='modal-close'>&times;</span>
+          <span onClick={ () => this.props.toggleModal() } className='modal-close'>&times;</span>
 
           <div>
-            <Avatar className='avatar'
-              name={name} round={true} color='#619ad1'
-              size='30' textSizeRatio={1.5} />
+            <Avatar className='avatar' name={name} round={true} color='#619ad1' size='30' textSizeRatio={1.5} />
             <a className='asker-name'>{name}</a>
             <span> added</span>
           </div>
 
-          <input type='text' className='question-input-box'
-            placeholder='Start your question with "What","How",
-            "Why",etc.'
-            value={ this.state.body }
-            onChange={ this.update('body') }/>
-
+          <input type='text' className='question-input-box' placeholder='Start your question with "What","How","Why",etc.' value={ this.state.body } onChange={ this.update('body') }/>
           <div className='border-line'></div>
         </form>
         <div className='question-form-footer'>
 
-          <select id='dropdown' value={ this.state.topic_id }
-            onChange={ this.update('topic_id') }
-            className='topic-downdown'>
+          <select id='dropdown' value={ this.state.topic_id } onChange={ this.update('topic_id') } className='topic-downdown'>
             <option value="">--Choose a topic--</option>
             {
               Object.values(this.props.topics).map( (topic, idx) => {
-                return <option
-                  key={idx} value={topic.id}>{topic.name}</option>;
+                return <option key={idx} value={topic.id}>{topic.name}</option>;
               })
             }
           </select>
-
-          <button onClick={ this.handleSubmit }
-            className='add-question-button'>Add Question</button>
-          <a onClick={ () => this.props.toggleModal() }
-            className='cancel-question'>Cancel</a>
+          
+          <button onClick={ this.handleSubmit } className='add-question-button'>Add Question</button>
+          <a onClick={ () => this.props.toggleModal() } className='cancel-question'>Cancel</a>
         </div>
       </div>
     );

@@ -14,7 +14,6 @@ class AnswerEditor extends React.Component {
         ['bold', 'italic', {'list': 'ordered'}, {'list': 'bullet'}]
       ]
     };
-
     this.formats = ['bold', 'italic'];
   }
 
@@ -24,37 +23,25 @@ class AnswerEditor extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     this.props.toggleEditor();
     this.props.createAnswer(this.state);
+    this.setState({ body: '' });
   }
 
   render() {
-    const currentUserName = this.props.currentUser.first_name + ' ' +
-    this.props.currentUser.last_name;
+    const currentUserName = this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name;
 
     return (
-      <div className={`answer-editor-container
-          answer-editor-container-${this.props.question.id}`}>
+      <div className={`answer-editor-container answer-editor-container-${this.props.question.id}`}>
 
         <div className='answer-editor-header'>
           { currentUserName }
         </div>
         <div className='answer-editor'>
-          <ReactQuill
-            theme={'snow'}
-            onChange={this.updateBody.bind(this)}
-            value={this.state.body}
-            modules={this.modules}
-            formats={this.formats}
-            placeholder="Write your answer"
-           />
+          <ReactQuill theme={'snow'} onChange={this.updateBody.bind(this)} value={this.state.body} modules={this.modules} formats={this.formats} placeholder="Write your answer"/>
         </div>
         <div className='answer-editor-footer'>
-          <button className='answer-button'
-            onClick={ this.handleSubmit }>
-            Submit
-          </button>
+          <button className='answer-button' onClick={ this.handleSubmit }> Submit </button>
         </div>
       </div>
     );

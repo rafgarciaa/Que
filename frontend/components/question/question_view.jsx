@@ -93,6 +93,7 @@ export default class QuestionView extends React.Component {
       </Modal>;
     } else {
       deleteButton = null;
+      deleteModal = null;
     }
 
 
