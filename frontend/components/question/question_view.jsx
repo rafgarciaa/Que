@@ -27,6 +27,7 @@ export default class QuestionView extends React.Component {
   componentDidMount() {
     this.props.fetchQuestion(this.props.match.params.questionId);
     this.props.fetchAnswers();
+    this.props.fetchComments();
   }
 
   deleteQuestionItem() {
@@ -72,30 +73,19 @@ export default class QuestionView extends React.Component {
 
   render() {
     const question = this.props.question || {body: '', author_id: 0};
-    const currentUserName = this.props.currentUser.first_name + ' ' +
-    this.props.currentUser.last_name;
+    const currentUserName = this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name;
 
     let deleteButton, deleteModal;
     if (this.props.currentUser.id === question.author_id) {
-      deleteButton = <span onClick={ this.toggleDeleteModal }
-        className='delete-button'>&times;</span>;
-      deleteModal = <Modal
-        className='modal-overlay'
-        isOpen={ this.state.showDeleteModal }
-        contentLabel='Delete Question Modal'
-        ariaHideApp={ false }>
-
-        <DeleteModal
-          type='question'
-          toggleModal={ this.toggleDeleteModal }
-          deleteAction={ this.deleteQuestionItem } />
-
+      deleteButton = <span onClick={ this.toggleDeleteModal } className='delete-button'>&times;</span>;
+      deleteModal =
+      <Modal className='modal-overlay' isOpen={ this.state.showDeleteModal } contentLabel='Delete Question Modal' ariaHideApp={ false }>
+        <DeleteModal type='question' toggleModal={ this.toggleDeleteModal } deleteAction={ this.deleteQuestionItem } />
       </Modal>;
     } else {
       deleteButton = null;
       deleteModal = null;
     }
-
 
     if (!this.props.question) {
       return (
@@ -111,16 +101,11 @@ export default class QuestionView extends React.Component {
 
       let answers, userPrompt;
       if (this.props.question.answerIds.length > 0) {
-        answers = <AnswerContainer
-          answerIds={ this.props.question.answerIds }
-          answers={ this.props.answers }
-          />;
+        answers = <AnswerContainer answerIds={ this.props.question.answerIds } answers={ this.props.answers } />;
       } else {
         userPrompt =
           <div className='user-prompt-container'>
-            <Avatar className='avatar'
-              name={currentUserName} round={true} color='#619ad1'
-              size='50' textSizeRatio={1.5} />
+            <Avatar className='avatar' name={currentUserName} round={true} color='#619ad1' size='50' textSizeRatio={1.5} />
             <div className='user-prompt-1'>
               {this.props.currentUser.first_name}, can you answer this question?
             </div>
@@ -160,45 +145,28 @@ export default class QuestionView extends React.Component {
                 Answer
               </div>
 
-            <div className='buttons-right'>
-              <div className='edit-button'
-                onClick={ this.toggleDropDown }>
-                <i className="fas fa-ellipsis-h"></i>
-              </div>
-              <div className='edit-dropdown'
-                onClick={ this.toggleModal }>
-                Edit
-              </div>
+              <div className='buttons-right'>
+                <div className='edit-button' onClick={ this.toggleDropDown }>
+                  <i className="fas fa-ellipsis-h"></i>
+                </div>
+                <div className='edit-dropdown' onClick={ this.toggleModal }>
+                  Edit
+                </div>
 
-              <Modal
-                className='question-modal-overlay'
-                isOpen={ this.state.showEditModal }
-                contentLabel='Edit Question Modal'
-                ariaHideApp={ false }>
-
-                <EditQuestionFormContainer
-                  toggleModal={ this.toggleModal }
-                  question={ this.props.question }/>
-              </Modal>
+                <Modal className='question-modal-overlay' isOpen={ this.state.showEditModal } contentLabel='Edit Question Modal' ariaHideApp={ false }>
+                  <EditQuestionFormContainer toggleModal={ this.toggleModal } question={ this.props.question }/>
+                </Modal>
+              </div>
             </div>
 
+            <div className='answer-count'>
+              { numAns }
             </div>
-
-              <div className='answer-count'>
-                { numAns }
-              </div>
-
           </div>
 
-          <AnswerEditor
-            question={ this.props.question }
-            currentUser={ this.props.currentUser }
-            toggleEditor={ this.toggleEditor }/>
-
+          <AnswerEditor question={ this.props.question } currentUser={ this.props.currentUser } toggleEditor={ this.toggleEditor }/>
           { userPrompt }
-
           { answers }
-
         </div>
       );
     }

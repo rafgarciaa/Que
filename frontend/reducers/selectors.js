@@ -7,5 +7,9 @@ export const selectAllTopics = state => {
 };
 
 export const selectAllAnswers = state => {
-  return Object.values(state.entities.answers); 
+  return Object.values(state.entities.answers);
+};
+
+export const selectAllComments = state => {
+  return Object.values(state.entities.comments);
 };

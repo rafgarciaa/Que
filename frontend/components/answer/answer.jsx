@@ -4,6 +4,7 @@ import Avatar from 'react-avatar';
 import CommentFormContainer from '../comment/comment_form_container';
 import Modal from 'react-modal';
 import DeleteModal from '../ui/delete_modal';
+import CommentItemContainer from '../comment/comment_item_container';
 
 export default class Answer extends React.Component {
   constructor(props) {
@@ -60,6 +61,7 @@ export default class Answer extends React.Component {
       } else {
         avatar = <Avatar className='avatar' name={answererName} round={true} size='30' textSizeRatio={1.5} />;
         deleteButton = null;
+        modal = null;
       }
 
       return (
@@ -95,6 +97,9 @@ export default class Answer extends React.Component {
 
           <div className={`comment-box comment-box-${answer.id}`}>
             <CommentFormContainer answerId={ answer.id }/>
+            <ul className='comment-list-container'>
+              <CommentItemContainer commentIds={ answer.commentIds } />
+            </ul>
           </div>
         </div>
       );
