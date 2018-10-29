@@ -57,7 +57,6 @@ This feature is still under construction!
 ---
 
 ## Future Implementations
-+ Comments (under construction)
 + Upvotes and Downvotes
 + Search Feature
 + Infinite Scrolling
